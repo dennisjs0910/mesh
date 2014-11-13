@@ -38,3 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Use oauth + devise for authentication and security
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+# gem 'omniauth-facebook'
+# gem 'omniauth-linkedin'
