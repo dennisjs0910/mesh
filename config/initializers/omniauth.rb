@@ -1,3 +1,12 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :twitter, "0puWhU9g2RzQSAZPjPzR851yY", "787QfwNIYIPcBTaSd9Fpm2E4D4z5pnxpy7LfAU44fUxYgFsJAs"
-end
+  puts "WHOOOOOO"
+  provider :twitter, "OvewcARD3k0MT9bCooAubPz3z", "60MT2zJFgJ0K6Ydc0dAnS4mp4uoYO6XUrvVoelB3ZTEbreFdvK"
+   {
+      :secure_image_url => 'true',
+      :image_size => 'original',
+      :authorize_params => {
+        :force_login => 'true',
+        :lang => 'pt'
+      }
+    }
+end 
