@@ -15,6 +15,12 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     }
   end
 
+  def twitter   
+    # show twitter account information
+    @uid = env['omniauth.auth']['uid']
+    @nickname = env['omniauth.auth']['nickname']
+  end
+
   # [:twitter, :facebook, :linked_in].each do |provider|
   [:twitter].each do |provider|  
     provides_callback_for provider
