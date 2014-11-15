@@ -41,3 +41,5 @@ gem 'pry',           group: :development
 gem 'sorcery'
 gem 'omniauth'
 gem 'omniauth-twitter'
+
+gem 'twitter'
