@@ -1,9 +1,7 @@
-require 'pry'
-
 class AuthenticationsController < ApplicationController
   def index
-    @twitter = twitter.home_timeline
     @authentications = current_user.authentications if current_user
+    @twitter = twitter_timeline
   end
 
   def create
@@ -23,6 +21,12 @@ class AuthenticationsController < ApplicationController
       config.access_token_secret = current_user.authentications.find_by(provider: 'twitter').secret
     end
   end 
+
+  def twitter_timeline
+    twitter.home_timeline.each do |tweet|
+      return tweet.attrs
+    end
+  end
 
   def destroy
     @authentication = current_user.authentications.find(params[:id])
