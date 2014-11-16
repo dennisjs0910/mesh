@@ -43,3 +43,5 @@ gem 'sorcery'
 gem 'sorcery'
 gem 'omniauth'
 gem 'omniauth-twitter'
+
+gem 'twitter'

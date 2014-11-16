@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-
-  post '/auth/:provider/callback' => 'authentications#create'
-  get '/auth/:provider/callback' => 'authentications#index', :as => "authentications"
-  post '/auth/:provider/callback' => 'authentications#destroy'
-
   get 'home/new'
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -13,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-
+  
+  get '/auth/:provider/callback' => 'authentications#create'
+  resources :authentications, only: [:index, :destroy]
   
   root :to => "users#new"
 
