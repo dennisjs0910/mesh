@@ -36,4 +36,8 @@
 </a>
 <div class="clear"></div>
 
-<%= @client.home_timeline %> 
+<%= @twitter.each do |tweet| %>
+<%= tweet.retweet.count %>
+<% end %>
+
+
