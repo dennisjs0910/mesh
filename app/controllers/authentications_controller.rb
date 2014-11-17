@@ -1,9 +1,14 @@
-require 'json'
+require 'pry'
 
 class AuthenticationsController < ApplicationController
+
+  before_action :require_user, only: [:index]
+
   def index
-    @authentications = current_user.authentications if current_user
-    @twitter = twitter_timeline
+    @authentications = current_user.authentications
+    twitter_user = TwitterUser.new(current_user)
+    @tweets = twitter_user.get_timeline
+    # binding.pry
   end
 
   def create
@@ -15,26 +20,31 @@ class AuthenticationsController < ApplicationController
     redirect_to authentications_url
   end
 
-  def twitter
-    @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = 'F24Pacf6CN7o1gH9E4turYnDz'
-      config.consumer_secret     = 'LoFVLjRIpKMdmq0hmoeslLSEgV8qCqdrZi6SvZdJH6lnUvIV9c'
-      config.access_token        = current_user.authentications.find_by(provider: 'twitter').token
-      config.access_token_secret = current_user.authentications.find_by(provider: 'twitter').secret
-    end
-  end 
-
-  def twitter_timeline
-    twitter.home_timeline.each do |tweet|
-      return tweet.attrs
-    end
-  end
-
   def destroy
     @authentication = current_user.authentications.find(params[:id])
     @authentication.destroy
     flash[:notice] = "Successfully destroyed authentication."
     redirect_to authentications_url
   end
+
+private
+  # NOTE: All this should go in the library
+
+
+
+
+  # def display_url
+  #   array = []
+  #   twitter.home_timeline.each do |tweet|
+  #     return tweet.attrs[:extended_entities][:media][0][:display_url]
+  #   end
+  # end
+
+
+  # def twitter_timeline
+  #   twitter.user_timeline("OctoberMeshmesh")
+
+  # end
+
 
 end

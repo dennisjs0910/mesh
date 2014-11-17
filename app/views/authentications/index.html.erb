@@ -36,6 +36,25 @@
 </a>
 <div class="clear"></div>
 
-<img src=""
-<%= @twitter[:text] %>
+
+
+<% @tweets.each do |tweet| %>
+
+  <div>
+    <div><%= raw tweet["source"] %><div>
+    <%= image_tag tweet["user"]["profile_image_url_https"], :width => 100, :height => 100 %>
+    <%= debug tweet %>
+
+    <div><%= raw tweet["text"] %></div>
+  </div><br>
+<% end %>
+
+
+
+
+
+
+
+
+
 
