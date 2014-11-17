@@ -40,8 +40,12 @@ gem 'pry',           group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'sorcery'
 gem 'omniauth'
+#twitter
 gem 'omniauth-twitter'
-
 gem 'twitter'
+
+#instagram 
+gem 'omniauth-instagram'
+gem 'instagram'
 
 gem 'json'

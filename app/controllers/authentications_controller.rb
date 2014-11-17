@@ -13,10 +13,17 @@ class AuthenticationsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    current_user.find_or_create_authentication(auth['provider'], auth['uid'], auth['credentials']['token'], auth['credentials']['secret'])   
+      #twitter
+    if auth['credentials']['secret']
+      current_user.find_or_create_authentication(auth['provider'], auth['uid'], auth['credentials']['token'], auth['credentials']['secret']) 
+    else
+      #instagram
+      current_user.find_or_create_authentication(auth['provider'], auth['uid'], auth['credentials']['token'], "empty")
+    end 
+    # binding.pry
+    # current_user.find_or_create_authentication(auth['provider'], auth['uid'], auth['credentials']['token'], auth['credentials']['secret'])   
       
     flash[:notice] = "AIYO IT WORKS"
-    twitter
     redirect_to authentications_url
   end
 
