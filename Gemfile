@@ -48,4 +48,7 @@ gem 'twitter'
 gem 'omniauth-instagram'
 gem 'instagram'
 
+#facebook
+gem 'omniauth-facebook'
+
 gem 'json'
