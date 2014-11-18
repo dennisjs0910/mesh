@@ -38,6 +38,11 @@
 
 
 
+<%# @twitter[:text] %>
+<!-- <img src="<%# @twitter[:entities][:profile_image_url_https]%>"> -->
+<%# @twitter[:entities][:urls][0][:url]%>
+
+
 <% @tweets.each do |tweet| %>
 
   <div><hr>
@@ -60,6 +65,7 @@
 
   </div><br>
 <% end %>
+
 
 
 
