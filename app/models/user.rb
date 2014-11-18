@@ -44,4 +44,10 @@ class User < ActiveRecord::Base
   def twitter_authentication
     self.authentications.find_by(provider: :twitter)
   end
+
+  def instagram_authentication
+    self.authentications.find_by(provider: :instagram)
+  end
+
+
 end

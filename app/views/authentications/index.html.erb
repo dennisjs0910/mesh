@@ -37,6 +37,10 @@
 <div class="clear"></div>
 
 
+<% @instas.each do |pictures| %>
+  <img src = <%= pictures.images.thumbnail.url %>> 
+<% end %>
+
 
 <%# @twitter[:text] %>
 <!-- <img src="<%# @twitter[:entities][:profile_image_url_https]%>"> -->

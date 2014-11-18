@@ -8,7 +8,11 @@ class AuthenticationsController < ApplicationController
     @authentications = current_user.authentications
     twitter_user = TwitterUser.new(current_user)
     @tweets = twitter_user.get_timeline
-    # binding.pry
+    # instagram_user = InstagramUser.new(current_user)
+    client = Instagram.client(:access_token => current_user.authentications.find_by(provider: "instagram").token)
+    binding.pry
+    @instas = client.media_popular
+    # @instas = client.media_popular
   end
 
   def create
@@ -20,8 +24,6 @@ class AuthenticationsController < ApplicationController
       #instagram
       current_user.find_or_create_authentication(auth['provider'], auth['uid'], auth['credentials']['token'], "empty")
     end 
-    # binding.pry
-    # current_user.find_or_create_authentication(auth['provider'], auth['uid'], auth['credentials']['token'], auth['credentials']['secret'])   
       
     flash[:notice] = "AIYO IT WORKS"
     redirect_to authentications_url
