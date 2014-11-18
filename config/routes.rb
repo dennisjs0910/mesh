@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'twitter/index'
 
+  get 'instagram/index'
+
   get 'home/new'
 
   get "logout" => "sessions#destroy", :as => "logout"
