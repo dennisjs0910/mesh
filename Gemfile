@@ -51,4 +51,9 @@ gem 'instagram'
 #facebook
 gem 'omniauth-facebook'
 
+#soundcloud 
+gem 'omniauth-soundcloud'
+gem 'soundcloud'
+
+
 gem 'json'

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :twitter, only: [:index]
   resources :instagram, only: [:index]
+  resources :soundcloud, only: [:index]
 
 
   get '/auth/:provider/callback' => 'authentications#create'
