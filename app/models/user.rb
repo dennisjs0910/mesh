@@ -41,4 +41,5 @@ class User < ActiveRecord::Base
   def instagram_authentication
     self.authentications.find_by(provider: :instagram)
   end
+
 end

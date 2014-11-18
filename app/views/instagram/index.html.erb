@@ -1,0 +1,4 @@
+<h1>Instagram</h1>
+<% @instas.each do |pictures| %>
+  <img src = <%= pictures.images.thumbnail.url %>> 
+<% end %>

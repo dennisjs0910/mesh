@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'instagram/index'
+
+  get 'twitter/index'
+
   get 'home/new'
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -8,7 +12,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  
+
+  resources :twitter, only: [:index]
+  resources :instagram, only: [:index]
+
+
   get '/auth/:provider/callback' => 'authentications#create'
   resources :authentications, only: [:index, :destroy]
   

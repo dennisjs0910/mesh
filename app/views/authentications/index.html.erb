@@ -37,35 +37,14 @@
 <div class="clear"></div>
 
 
+<% @instas.each do |pictures| %>
+  <img src = <%= pictures.images.thumbnail.url %>> 
+<% end %>
+
 
 <%# @twitter[:text] %>
 <!-- <img src="<%# @twitter[:entities][:profile_image_url_https]%>"> -->
 <%# @twitter[:entities][:urls][0][:url]%>
-
-
-<% @tweets.each do |tweet| %>
-
-  <div><hr>
-    <div><%= raw tweet["source"] %></div>
-    <%= tweet["user"]["name"] %><br>
-    <small>@<%= tweet["user"]["screen_name"] %></small><br>
-   
-  
-    <% if tweet["entities"]["media"] %>
-      <%= image_tag tweet["entities"]["media"][0]["media_url"] %>
-    <% end %>
-
-    <%= image_tag tweet["user"]["profile_image_url_https"], :width => 100, :height => 100 %>
-    <% debug tweet %>
-
-    <p>Tweet: <%= tweet["text"].to_s %></p><br>
-    <% if tweet["retweeted_status"] %>
-      <p>Retweet: <%= tweet["retweeted_status"]["text"] %></p>
-    <% end %>
-
-  </div><br>
-<% end %>
-
 
 
 
