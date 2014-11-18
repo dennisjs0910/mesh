@@ -30,13 +30,6 @@ class User < ActiveRecord::Base
       authen.secret = secret
       authen.token = token
       authen.save!
-    elsif provider_auth && provider_auth.token != token
-      puts "Hello world"
-      provider_auth.token = token
-      provider_auth.uid = uid
-
-      provider_auth.secret = secret
-      provider_auth.save!
     end
     
   end
