@@ -19,6 +19,15 @@ class TwitterUser
     @client.update(message)
   end
 
+  def search_tweets(search_params)
+    if search_params
+      @client.search("to: " + search_params, result_type: "recent").take(10).collect do |tweet| 
+        tweet
+      end
+    else
+      nil
+    end
+  end
 
   def get_timeline
     key = twitter_cache_key(user)
