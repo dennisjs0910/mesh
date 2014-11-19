@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'instagram/index'
 
+  get 'facebook/index'
+
   get 'home/new'
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   resources :twitter, only: [:index]
   resources :instagram, only: [:index]
   resources :soundcloud, only: [:index]
+  resources :facebook, only: [:index ]
 
 
   get '/auth/:provider/callback' => 'authentications#create'

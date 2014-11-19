@@ -22,5 +22,6 @@ module Meshapp
 
     # Autoload classes from lib
     config.autoload_paths << Rails.root.join('lib')
+    Koala.config.api_version = 'v2.0'
   end
 end
