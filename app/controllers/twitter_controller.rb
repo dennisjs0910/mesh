@@ -10,4 +10,13 @@ class TwitterController < ApplicationController
     @tweet = @twitter_user.tweet(params[:message])
     redirect_to twitter_path
   end
+
+  def retweet
+    @twitter_user = TwitterUser.new(current_user)
+    @tweet = @twitter_user.tweet(params[:message])
+    @retweet = twitter_user.retweet(@tweet)
+  end 
+
+
+
 end

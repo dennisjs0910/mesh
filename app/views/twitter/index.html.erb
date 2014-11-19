@@ -23,8 +23,11 @@
 
     <p>Tweet: <%= tweet["text"].to_s %></p><br>
     <% if tweet["retweeted_status"] %>
-      <p>Retweet: <%= tweet["retweeted_status"]["text"] %></p>
+      <p>Retweet:,  <%= tweet["retweeted_status"]["text"] %></p>
     <% end %>
 
   </div><br>
 <% end %>
+
+link_to "Profile", profile_path(@profile)
+# => <a href="/profiles/1">Profile</a>
