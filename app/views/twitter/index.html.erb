@@ -1,5 +1,12 @@
 <h1>Twitter</h1>
-<% @tweets.each do |tweet| %>
+
+<%= form_tag("/twitter", method: "post") do %>
+  <%= label_tag(:message, "Post a Tweet:") %>
+  <%= text_field_tag(:message) %>
+  <%= submit_tag("TWEET") %>
+<% end %>
+
+<% @timeline.each do |tweet| %>
 
   <div><hr>
     <div><%= raw tweet["source"] %></div>

@@ -50,6 +50,7 @@ gem 'instagram'
 
 #facebook
 gem 'omniauth-facebook'
+gem 'koala'
 
 #soundcloud 
 gem 'omniauth-soundcloud'

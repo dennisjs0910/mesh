@@ -15,6 +15,11 @@ class TwitterUser
     end
   end
 
+  def tweet(message)
+    @client.update(message)
+  end
+
+
   def get_timeline
     key = twitter_cache_key(user)
     if tweets_are_cached?(user)

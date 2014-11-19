@@ -73,6 +73,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.0.0)
+    koala (1.10.1)
+      addressable
+      faraday
+      multi_json
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     memoizable (0.4.2)
@@ -199,6 +203,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   json
+  koala
   omniauth
   omniauth-facebook
   omniauth-instagram
