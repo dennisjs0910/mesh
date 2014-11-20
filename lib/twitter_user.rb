@@ -33,9 +33,8 @@ class TwitterUser
     end
   end
 
-  def get_twitter_username
-    binding.pry
-
+  def twitter_username
+    @client.current_user.screen_name
   end 
 
   def get_timeline
@@ -46,7 +45,7 @@ class TwitterUser
     # else
       # Read all the tweets and store them in the cache.
       # puts "! Writing tweets to cache"
-     @client.user_timeline(@client.current_user.screen_name)
+     @client.user_timeline(twitter_username)
       # Rails.cache.write(key, tweets.to_json)
     # end   
     # return tweets
