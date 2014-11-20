@@ -15,4 +15,7 @@ class FacebookUser
     @client.get_object("me?fields=name,picture")
   end
 
+  def newsfeed_info
+  end 
+
 end

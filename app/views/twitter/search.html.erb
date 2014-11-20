@@ -14,10 +14,12 @@
 
     <%= image_tag search_tweet["user"]["profile_image_url_https"] %>
     <% debug search_tweet %>
+    <p><%= link_to "Retweet", retweet_path(id: search_tweet["id"]), :method => :get%> </p>
 
     <p class="text">Tweet: <%= search_tweet["text"] %></p><br>
     <% if search_tweet["research_tweeted_status"] %>
       <p class="retweet">Retweet: <%= search_tweet["retweeted_status"]["text"] %></p>
+
     <% end %>
     
     <% debug search_tweet.attrs %>
