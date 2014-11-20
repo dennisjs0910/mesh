@@ -5,9 +5,9 @@
     <%= search_tweet["user"]["name"] %><br>
     <small>@<%= search_tweet["user"]["screen_name"] %></small><br>
   <div class="photos"> 
-  <% if search_tweet.attrs["entities"] %>
-    <% if search_tweet.attrs["entities"]["media"] %>
-      <%= image_tag search_tweet.attrs["entities"]["media"][0]["media_url"].to_s %>
+  <% if search_tweet["attrs"]["entities"] %>
+    <% if search_tweet["attrs"]["entities"]["media"] %>
+      <%= image_tag search_tweet["attrs"]["entities"]["media"][0]["media_url"].to_s %>
     <% end %>
   <% end %>
   </div>  
@@ -22,6 +22,6 @@
 
     <% end %>
     
-    <% debug search_tweet.attrs %>
+    <% debug search_tweet["attrs"] %>
   <% end %>
 <% end %>

@@ -38,29 +38,13 @@ class TwitterUser
   end 
 
   def get_timeline
-    # key = twitter_cache_key(user)
-    # if tweets_are_cached?(user)
-    #   puts "! Reading tweets from cache"
-    #   tweets = JSON.parse(Rails.cache.read(key))
-    # else
-      # Read all the tweets and store them in the cache.
-      # puts "! Writing tweets to cache"
-     @client.user_timeline(twitter_username)
-      # Rails.cache.write(key, tweets.to_json)
-    # end   
-    # return tweets
+    @client.user_timeline(twitter_username)
   end
 
-  # def retweet(*args)
-  #   post_retweet(id)
-  # end
+  def get_home_timeline
+    @client.home_timeline
+  end
 
-  # def retweet(id, options={})
-  #   new_status = post("/1/statuses/retweet/#{id}.json", options)
-  #   orig_status = new_status.delete('retweeted_status')
-  #   orig_status['retweeted_status'] = new_status
-  #   Twitter::Status.new(orig_status)
-  # end
 
   private
   def twitter_cache_key(user)

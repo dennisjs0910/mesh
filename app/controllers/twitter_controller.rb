@@ -17,11 +17,10 @@ class TwitterController < ApplicationController
     redirect_to twitter_index_path
   end 
 
-  # def search
-  #   @twitter_user = TwitterUser.new(current_user)
-  #   @tweet = @twitter_user.search(params[:search])
-  #   redirect_to twitter_path
-  # end
+  def home
+    @twitter_user = TwitterUser.new(current_user)
+    @twitter_user.get_home_timeline
+  end
 
   def search
     @twitter_user = TwitterUser.new(current_user)
