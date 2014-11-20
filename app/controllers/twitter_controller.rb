@@ -12,10 +12,10 @@ class TwitterController < ApplicationController
     redirect_to twitter_path
   end
 
-  def retweet
+  def re_tweet
     @twitter_user = TwitterUser.new(current_user)
-    @tweet = @twitter_user.tweet(params[:message])
-    @retweet = twitter_user.retweet(@tweet)
+    binding.pry
+    @retweet = @twitter_user.retweet(params[:id])
   end 
 
   # def search

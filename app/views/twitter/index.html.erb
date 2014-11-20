@@ -23,7 +23,7 @@
 
   <div><hr>
     <div><%= raw tweet["source"] %></div>
-    <%= tweet["user"]["name"] %><br>
+    <%= tweet["user"]["name"]["id"] %><br>
     <small>@<%= tweet["user"]["screen_name"] %></small><br>
    
   
@@ -32,15 +32,18 @@
     <% end %>
 
     <%= image_tag tweet["user"]["profile_image_url_https"], :width => 100, :height => 100 %>
-    <% debug tweet %>
+    <%debug tweet %>
 
-    <p>Tweet: <%= tweet["text"].to_s %></p><br>
+    <p> ID: <%= tweet["id_str"] %> </p>
+
+
+    <p>Tweet: <%= tweet["text"] %></p><br>
     <% if tweet["retweeted_status"] %>
       <p>Retweet:,  <%= tweet["retweeted_status"]["text"] %></p>
+      <p> Retweet <%= link_to "retweet", retweet_path(id: tweet["id"]), :method => :get%> </p>
+
     <% end %>
 
   </div><br>
 <% end %>
 
-link_to "Profile", profile_path(@profile)
-# => <a href="/profiles/1">Profile</a>
