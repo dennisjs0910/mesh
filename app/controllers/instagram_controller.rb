@@ -1,6 +1,6 @@
 class InstagramController < ApplicationController
   def index
-    client = Instagram.client(:access_token => current_user.authentications.find_by(provider: "instagram").token)
+    client = Instagram.client(:access_token => current_user.instagram_authentication.token)
     @instas = client.media_popular
     @insta_newsfeed = client.user_media_feed
     # @search_by_tag = client.tag_search(search)
