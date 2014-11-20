@@ -13,13 +13,14 @@ Rails.application.routes.draw do
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
-  post "twitter" => "twitter#create", :as => "twitter"
-  
+  get "twitter/search" => "twitter#search", :as => "twitter/search"
+
+
 
   resources :users
   resources :sessions
 
-  resources :twitter, only: [:index]
+  resources :twitter, only: [:index, :create]
   resources :instagram, only: [:index]
   resources :soundcloud, only: [:index]
   resources :facebook, only: [:index ]

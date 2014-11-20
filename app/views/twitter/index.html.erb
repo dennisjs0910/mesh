@@ -6,17 +6,9 @@
   <%= submit_tag("TWEET") %>
 <% end %>
 
-<%= form_tag(twitter_path, :method => "get") do %>
+<%= form_tag('/twitter/search', :method => "get") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search by Tweets" %>
   <%= submit_tag("Search") %>
-<% end %>
-
-<% if @search %>
-  <% @search.each do |search_tweet| %>
-  
-    
-    <%= debug search_tweet %>
-  <% end %>
 <% end %>
 
 <% @timeline.each do |tweet| %>
