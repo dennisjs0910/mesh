@@ -1,15 +1,30 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+
+  get 'instagram/index'
+
+  get 'twitter/index'
+
+  get 'instagram/index'
+
+  get 'home/new'
+
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
+  resources :users
+  resources :sessions
+
+  resources :twitter, only: [:index]
+  resources :instagram, only: [:index]
+  resources :soundcloud, only: [:index]
 
 
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-  resource :sessions, only: [:new, :create, :destroy]
+  get '/auth/:provider/callback' => 'authentications#create'
+  resources :authentications, only: [:index, :destroy]
+  
+  root :to => "users#new"
 
-  get '/auth/:provider/callback', to: 'sessions#create'
-
-  # match '/users/auth/twitter/callback' => "omniauth_callbacks#twitter", via: [:get], :as => :user_omniauth_callback
-
-  root to: 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
