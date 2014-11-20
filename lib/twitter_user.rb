@@ -33,18 +33,23 @@ class TwitterUser
     end
   end
 
+  def get_twitter_username
+    binding.pry
+
+  end 
+
   def get_timeline
-    key = twitter_cache_key(user)
-    if tweets_are_cached?(user)
-      puts "! Reading tweets from cache"
-      tweets = JSON.parse(Rails.cache.read(key))
-    else
+    # key = twitter_cache_key(user)
+    # if tweets_are_cached?(user)
+    #   puts "! Reading tweets from cache"
+    #   tweets = JSON.parse(Rails.cache.read(key))
+    # else
       # Read all the tweets and store them in the cache.
-      puts "! Writing tweets to cache"
-      tweets = @client.user_timeline("OctoberMeshmesh")
-      Rails.cache.write(key, tweets.to_json)
-    end   
-    return tweets
+      # puts "! Writing tweets to cache"
+     @client.user_timeline(@client.current_user.screen_name)
+      # Rails.cache.write(key, tweets.to_json)
+    # end   
+    # return tweets
   end
 
   def get_home_timeline

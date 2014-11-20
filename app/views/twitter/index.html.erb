@@ -12,26 +12,26 @@
 <% end %>
 
 <% @timeline.each do |tweet| %>
-
   <div><hr>
-    <div><%= raw tweet["source"] %></div>
-    <%= tweet["user"]["name"]["id"] %><br>
-    <small>@<%= tweet["user"]["screen_name"] %></small><br>
+    <div><%= raw tweet.attrs["source"] %></div>
+    <%= tweet.attrs["user"]["name"]["id"] %><br>
+    <small>@<%= tweet.attrs["user"]["screen_name"] %></small><br>
    
   
-    <% if tweet["entities"]["media"] %>
-      <%= image_tag tweet["entities"]["media"][0]["media_url"] %>
-    <% end %>
-
-    <%= image_tag tweet["user"]["profile_image_url_https"], :width => 100, :height => 100 %>
-    <%debug tweet %>
-
-    <p> ID: <%= tweet["id_str"] %> </p>
+      <% if tweet.attrs["entities"]["media"] %>
+        <%= image_tag tweet.attrs["entities"]["media"][0]["media_url"] %>
+      <% end %>
 
 
-    <p>Tweet: <%= tweet["text"] %></p><br>
-    <% if tweet["retweeted_status"] %>
-      <p>Retweet:,  <%= tweet["retweeted_status"]["text"] %></p>
+    <%= image_tag tweet.attrs["user"]["profile_image_url_https"], :width => 100, :height => 100 %>
+    <%debug tweet.attrs %>
+
+    <p> ID: <%= tweet.attrs["id_str"] %> </p>
+
+
+    <p>Tweet: <%= tweet.attrs["text"] %></p><br>
+    <% if tweet.attrs["retweeted_status"] %>
+      <p>Retweet:,  <%= tweet.attrs["retweeted_status"]["text"] %></p>
 
     <% end %>
 
