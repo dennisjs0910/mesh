@@ -4,7 +4,7 @@
 <% end %>
 
 <div>
-  <h1>newshit</h1><% @insta_newsfeed.each do |pictures| %>
+  <h1>Home Timeline</h1><% @insta_newsfeed.each do |pictures| %>
     <img src = <%= pictures.images.thumbnail.url %>> 
   <% end %>
 </div>

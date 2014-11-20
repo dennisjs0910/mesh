@@ -47,16 +47,10 @@ class TwitterUser
     return tweets
   end
 
-  # def retweet(*args)
-  #   post_retweet(id)
-  # end
+  def get_home_timeline
+    @client.home_timeline
+  end
 
-  # def retweet(id, options={})
-  #   new_status = post("/1/statuses/retweet/#{id}.json", options)
-  #   orig_status = new_status.delete('retweeted_status')
-  #   orig_status['retweeted_status'] = new_status
-  #   Twitter::Status.new(orig_status)
-  # end
 
   private
   def twitter_cache_key(user)
