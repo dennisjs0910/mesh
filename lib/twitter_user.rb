@@ -19,6 +19,10 @@ class TwitterUser
     @client.update(message)
   end
 
+  def retweet(id)
+    @client.retweet(id)
+  end 
+
   def search_tweets(search_params)
     if search_params
       @client.search("to: " + search_params, result_type: "recent").take(10).collect do |tweet| 
@@ -42,6 +46,17 @@ class TwitterUser
     end   
     return tweets
   end
+
+  # def retweet(*args)
+  #   post_retweet(id)
+  # end
+
+  # def retweet(id, options={})
+  #   new_status = post("/1/statuses/retweet/#{id}.json", options)
+  #   orig_status = new_status.delete('retweeted_status')
+  #   orig_status['retweeted_status'] = new_status
+  #   Twitter::Status.new(orig_status)
+  # end
 
   private
   def twitter_cache_key(user)
