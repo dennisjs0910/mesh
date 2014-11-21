@@ -22,6 +22,10 @@ module Meshapp
 
     # Autoload classes from lib
     config.autoload_paths << Rails.root.join('lib')
+<<<<<<< HEAD
     Koala.config.api_version = 'v2.0'
+=======
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+>>>>>>> styles
   end
 end
