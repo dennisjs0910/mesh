@@ -1,0 +1,10 @@
+<div>
+<h1>Search Results:</h1>
+
+<%= @media_item.each do |pictures| %>
+<%= image_tag pictures["images"]["thumbnail"]["url"].to_s %>
+
+<% end %> 
+</div>
+
+

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   
 
   get "twitter/search" => "twitter#search", :as => "twitter/search"
-
+  post "instagram/search" => "instagram#search", :as => "instagram/search"
 
 
 

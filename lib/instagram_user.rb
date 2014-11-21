@@ -13,4 +13,8 @@ class InstagramUser
     end
   end
 
+  def search_by_tag(search)
+    @client.tag_search(search)
+  end 
+
 end
