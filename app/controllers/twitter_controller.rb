@@ -1,6 +1,7 @@
 class TwitterController < ApplicationController
+  before_action :twitter_user
 
-  def index 
+  def index
     @timeline = twitter_user.get_timeline
   end
 

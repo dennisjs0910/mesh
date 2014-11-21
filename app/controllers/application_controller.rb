@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def twitter_user
     @twitter_user ||= TwitterUser.new(current_user)
-    binding.pry
+     
   end
 
 end
