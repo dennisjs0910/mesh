@@ -1,7 +1,7 @@
 class InstagramController < ApplicationController
   def index
-    client = Instagram.client(:access_token => current_user.instagram_authentication.token)
-    @instas = client.media_popular
+    
+    @instas = instagram_user.media_popular
     @insta_newsfeed = client.user_media_feed
     # @search_by_tag = client.tag_search(search)
     # @insta_like = client.like_media("#{params[:id]}")
