@@ -1,0 +1,107 @@
+/******* General Bubble Styles **********/
+.bubble {
+  display: inline-block;
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  position:relative;
+  overflow: hidden;
+  cursor:pointer;
+
+  :before {
+    content: "";
+    width: 300%;
+    height: 300%;
+    border-radius:50%;
+    position:absolute;
+    top:-300%;
+    left:-325%;
+
+    background-image: -webkit-linear-gradient(135deg, rgba(255,255,255,0), rgba(255,255,255,0.6), rgba(255,255,255,0)); 
+    background-image: -moz-linear-gradient(135deg, rgba(255,255,255,0), rgba(255,255,255,0.6), rgba(255,255,255,0));  
+    
+    -moz-transition: all 0.3s linear; 
+    -o-transition: all 0.3s linear; 
+    -webkit-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+  }
+
+  :hover:before {
+    top:300%;
+    left:300%;
+  }
+
+  :active:before {
+    animation: signal-burst 2s infinite linear;  
+  }
+}
+
+#facebookBubble {
+  background:#507BBE url('/assets/facebooktab.svg');
+  position:relative;
+  top:1em;
+  left:9em;
+}
+
+#twitterBubble {
+  background:#64CCEF url('/assets/twittertab.svg');
+  position:relative;
+  top:1em;
+  left:20em;
+}
+
+#linkedinBubble {
+  background:#3397D3 url('/assets/linkedintab.svg');
+  position:relative;
+  top:14.5em;
+  left:4.5em;
+}
+
+#instagramBubble {
+  background:#465CA9 url('/assets/instagramtab.svg'); 
+  position:relative;
+  top:5em;
+  left:-2.5em;
+}
+
+#pinterestBubble {
+  background:#F16260 url('/assets/pinteresttab.svg');
+  position:relative;
+  top:6em;
+  left:-27em;
+}
+
+#deviantartBubble {
+  background:#94A494 url('/assets/deviantarttab.svg');
+  position:relative;
+  top:10.5em;
+  left:9.3em;
+}
+
+#youtubeBubble {
+  background:#E01E26 url('/assets/youtubetab.svg');
+  position:relative;
+  top:2.2em;
+  left:2.3em;
+}
+
+#soundcloudBubble {
+  background:#EE743D url('/assets/soundcloudtab.svg');
+  position:relative;
+  top:2.2em;
+  left:13.2em;
+}
+
+#tumblrBubble {
+  background:#4D7DA1 url('/assets/tumblrtab.svg');
+  position:relative;
+  top:7.5em;
+  left:-20em;
+}
+
+#redditBubble {
+  background:#000000 url('/assets/reddittab.svg');
+  position:relative;
+  top:10.5em;
+  left:-0.5em; 
+}

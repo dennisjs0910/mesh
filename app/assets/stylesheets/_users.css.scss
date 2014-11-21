@@ -1,0 +1,23 @@
+/***** Register Styles ******/
+
+.new_user {
+  width:100%;
+  position:relative;
+  margin:0 auto;
+  top:5%;
+}
+
+.registerText {
+  font-size:18px;
+  letter-spacing: 0.1em;
+}
+
+.registerLink {
+  text-decoration:none;
+  color:white;
+}
+
+.registerLink:hover {
+  color:#3918bd;
+  transition:0.3s;
+}

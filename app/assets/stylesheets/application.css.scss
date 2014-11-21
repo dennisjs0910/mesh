@@ -1,0 +1,642 @@
+/********** Imports ***********/
+@import "home";
+@import "twitter";
+@import "instagram";
+@import "authentications";
+@import "sessions";
+@import "users";
+@import "hover";
+
+/********** Font Face **********/
+@font-face {
+    font-family: 'MeshFont';
+    src: url('helveticaultralight-webfont.eot');
+    src: url('helveticaultralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaultralight-webfont.woff2') format('woff2'),
+         url('helveticaultralight-webfont.woff') format('woff'),
+         url('helveticaultralight-webfont.ttf') format('truetype'),
+         url('helveticaultralight-webfont.svg#helvetica_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/********** General Styles ***********/
+a {
+  text-decoration:none;
+  color:skyblue;
+}
+
+/********** Background Styles *********/
+#background {
+  z-index:-1;
+  overflow:hidden !important;
+  display:none;
+
+  img {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    margin: -5px -10px -10px -5px;
+    position:absolute;
+    right:2px;
+    width:100%;
+    overflow:hidden !important;
+  }
+}
+
+/********** Header Styles *********/
+#header {
+  position:fixed;
+  top:0;
+  height:50px;
+  z-index:9999;
+
+  background: #5813d7 !important; /* Old browsers */
+  background: -moz-linear-gradient(left,  #5813d7 0%, #5c17b9 23%, #7438d7 52%, #5a3ae2 77%, #7232d1 100%) !important; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#5813d7), color-stop(23%,#5c17b9), color-stop(52%,#7438d7), color-stop(77%,#5a3ae2), color-stop(100%,#7232d1)) !important; /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #5813d7 0%,#5c17b9 23%,#7438d7 52%,#5a3ae2 77%,#7232d1 100%) !important; /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #5813d7 0%,#5c17b9 23%,#7438d7 52%,#5a3ae2 77%,#7232d1 100%) !important; /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #5813d7 0%,#5c17b9 23%,#7438d7 52%,#5a3ae2 77%,#7232d1 100%) !important; /* IE10+ */
+  background: linear-gradient(to right,  #5813d7 0%,#5c17b9 23%,#7438d7 52%,#5a3ae2 77%,#7232d1 100%) !important; /* W3C */ 
+}
+
+#mesh {
+  color:white;
+  text-decoration:none;
+  font-family:MeshFont;
+  font-size:34px;
+  line-height:50px;
+  margin-left:0.5em;
+  opacity:0.8;
+
+  :hover {
+    opacity:1;
+    transition:0.5s;
+  }
+}
+
+#usericon {
+  width:25px;
+  height:50px;
+  margin-right:1em;
+  opacity:0.5;
+
+  :hover {
+    opacity:1;
+    transition:0.5s;
+    cursor:pointer;
+  }
+}
+
+#userarea {
+  float:right;
+  text-align:right;
+}
+
+/******** Sidebar/Content Styles *********/
+#sidebar {
+  background:grey;
+  opacity:0.9;
+  position:fixed;
+  top:0;
+  min-height:1000px;
+  margin-top:50px;
+  overflow:scroll;
+}
+
+#content {
+  background:lightgrey;
+  position:absolute;
+  top:0;
+  right:0;
+  opacity:0.7;
+  min-height:100%;
+  max-width:100%;
+  text-align:center;
+  font-size:34px;
+  font-family:MeshFont;
+  color:black;
+  margin-top:50px;
+  overflow-x:hidden !important;
+}
+
+/******** Sidebar Tab Styles **********/
+#facebookTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/facebooktab.svg') left no-repeat;
+  letter-spacing: 0.03em;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#507BBE;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer; 
+  }
+}
+
+#twitterTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/twittertab.svg') left no-repeat;
+  letter-spacing: 0.05em;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#64CCEF;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#linkedinTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/linkedintab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#3397D3;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#instagramTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/instagramtab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#465CA9;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#pinterestTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/pinteresttab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#F16260;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#deviantartTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/deviantarttab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#94A494;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#youtubeTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/youtubetab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#E01E26;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#soundcloudTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/soundcloudtab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#EE743D;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#tumblrTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/tumblrtab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#4D7DA1;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#redditTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:75px;
+  z-index:9998;
+  background:#B7B7B7 url('/assets/reddittab.svg') left no-repeat;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:#000000;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: right 0.15s linear;
+  }
+
+  :hover:before {
+    right:0;
+  }
+
+  p {
+    height:75px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:left;
+    margin-left:2.5em;
+    font-family:MeshFont;
+    font-size:30px;
+    cursor:pointer;
+  }
+}
+
+#addTab {
+  position:relative;
+  display:block;
+  overflow:hidden;
+  width:100%;
+  height:100px;
+  z-index:9998;
+  background:#B7B7B7;
+  transition:         1s linear;
+  -o-transition:      1s linear;
+  -ms-transition:     1s linear;
+  -moz-transition:    1s linear;
+  -webkit-transition: 1s linear;
+
+  :hover {
+    color:white;
+  }
+
+  :before {
+    content: "";
+    position: absolute;
+    background:grey;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.15s linear;
+  }
+
+  :hover:before {
+    top:0;
+  }
+
+  p {
+    height:100px;
+    margin:0;
+    line-height:75px;
+    color:white;
+    text-align:center;
+    font-family:MeshFont;
+    font-size:50px;
+    cursor:pointer;
+  }
+}

@@ -1,4 +1,6 @@
+<div class="twitterBG"></div>
 <div class="twitter">
+<<<<<<< HEAD
 <h1>Twitter</h1>
 
 <%= form_tag("/twitter", method: "post") do %>
@@ -36,3 +38,28 @@
 
   </div><br>
 <% end %>
+=======
+<!-- <h1>Twitter</h1> -->
+<% @tweets.each do |tweet| %>
+
+  <div class="tweets"><!-- <hr> -->
+  <!--   <div><%= raw tweet["source"] %></div> -->
+    <%= image_tag tweet["user"]["profile_image_url_https"], :width => 48, :height => 48, :id => "twitterPF" %>
+    <h5 id="twitterUN"><strong><%= tweet["user"]["name"] %></strong></h5>
+    <h6 id="twitterHD">@<%= tweet["user"]["screen_name"] %></h6><br>
+
+     <% if tweet["entities"]["media"] %>
+      <%= image_tag tweet["entities"]["media"][0]["media_url"], :id => "twitterIMG" %>
+    <% end %>
+
+    <% debug tweet %>
+
+    <p id="twitterTXT"><%= tweet["text"].to_s %></p><br>
+    <!-- <% if tweet["retweeted_status"] %>
+      <p id="twitterRT">Retweet: <%= tweet["retweeted_status"]["text"] %></p>
+    <% end %> -->
+  </div>
+  <br>
+<% end %>
+</div>
+>>>>>>> styles
