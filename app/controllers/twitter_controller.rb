@@ -16,7 +16,7 @@ class TwitterController < ApplicationController
   end 
 
   def home
-    twitter_user.get_home_timeline
+    @tweets = twitter_user.get_home_timeline
   end
 
   def search
