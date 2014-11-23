@@ -211,7 +211,6 @@ DEPENDENCIES
   omniauth-twitter
   pry
   rails (= 4.1.7)
-  sass
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sorcery
