@@ -1,0 +1,27 @@
+<% if @tweet %>
+  <% @tweet.each do |search_tweet| %>
+
+  <div class="tweets"><hr>
+    <%= search_tweet["user"]["name"] %><br>
+    <small>@<%= search_tweet["user"]["screen_name"] %></small><br>
+  <div class="photos"> 
+  <% if search_tweet["attrs"]["entities"] %>
+    <% if search_tweet["attrs"]["entities"]["media"] %>
+      <%= image_tag search_tweet["attrs"]["entities"]["media"][0]["media_url"].to_s %>
+    <% end %>
+  <% end %>
+  </div>  
+
+    <%= image_tag search_tweet["user"]["profile_image_url_https"] %>
+    <% debug search_tweet %>
+    <p><%= link_to "Retweet", retweet_path(id: search_tweet["id"]), :method => :get%> </p>
+
+    <p class="text">Tweet: <%= search_tweet["text"] %></p><br>
+    <% if search_tweet["research_tweeted_status"] %>
+      <p class="retweet">Retweet: <%= search_tweet["retweeted_status"]["text"] %></p>
+
+    <% end %>
+    
+    <% debug search_tweet["attrs"] %>
+  <% end %>
+<% end %>

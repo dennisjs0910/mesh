@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   get 'instagram/index'
 
-  get 'twitter/index'
+  # get 'twitter/index'
 
   get 'instagram/index'
+
+  get 'facebook/index'
 
   get 'home/new'
 
@@ -12,12 +14,22 @@ Rails.application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
+  post "twitter" => "twitter#create", :as => "twitter"
+  get "retweet" => "twitter#re_tweet", :as => "retweet"
+  
+
+  get "twitter/search" => "twitter#search", :as => "twitter/search"
+  post "instagram/search" => "instagram#search", :as => "instagram/search"
+
+
+
   resources :users
   resources :sessions
 
-  resources :twitter, only: [:index]
+  resources :twitter, only: [:index, :create]
   resources :instagram, only: [:index]
   resources :soundcloud, only: [:index]
+  resources :facebook, only: [:index ]
 
 
   get '/auth/:provider/callback' => 'authentications#create'

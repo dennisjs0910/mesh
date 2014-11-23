@@ -45,4 +45,8 @@ class User < ActiveRecord::Base
     self.authentications.find_by(provider: :instagram)
   end
 
+  def facebook_authentication
+    self.authentications.find_by(provider: :facebook)
+  end 
+
 end

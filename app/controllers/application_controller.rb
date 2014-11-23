@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
     not_authenticated unless current_user
   end
 
+  def twitter_user
+    @twitter_user ||= TwitterUser.new(current_user)
+     
+  end
+
 end

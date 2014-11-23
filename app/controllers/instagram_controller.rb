@@ -1,13 +1,21 @@
 class InstagramController < ApplicationController
   def index
-    client = Instagram.client(:access_token => current_user.authentications.find_by(provider: "instagram").token)
+    client = Instagram.client(:access_token => current_user.instagram_authentication.token)
     @instas = client.media_popular
     @insta_newsfeed = client.user_media_feed
-    # @search_by_tag = client.tag_search(search)
-    # @insta_like = client.like_media("#{params[:id]}")
-    # @insta_unlike = client.unlike_media("#{params[:id]}")
-  
+    
+    # @insta_like = client.like_media
+    # @insta_unlike = client.unlike_media
   end
+
+  def search
+    client = Instagram.client(:access_token => current_user.instagram_authentication.token)
+    search = client.tag_search(params[:search])
+    @media_item = client.tag_recent_media(search[0].name)
+    
+    # @media_item.images[0].thumbnail.url
+    # @media_item = client.tag_recent_media(search[0].name)[0].user.username
+  end 
 
   ###each one of these functions may need to be put into a different controller after we have decided on 
   ###which ones to actually impletemnt
