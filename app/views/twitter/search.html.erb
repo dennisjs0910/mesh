@@ -1,5 +1,8 @@
+<%= render 'form' %>
+
 <% if @tweet %>
   <% @tweet.each do |search_tweet| %>
+
 
   <div class="tweets"><hr>
     <%= search_tweet["user"]["name"] %><br>

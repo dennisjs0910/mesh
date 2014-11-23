@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
-  post "twitter" => "twitter#create", :as => "twitter"
+  
   get "retweet" => "twitter#re_tweet", :as => "retweet"
   
 

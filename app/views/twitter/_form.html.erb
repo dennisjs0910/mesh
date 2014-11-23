@@ -1,0 +1,13 @@
+<div class="postTweet">
+  <%= form_tag("/twitter", method: "post") do %>
+    <%= text_field_tag :message, params[:message], placeholder: "Post a Tweet!" %>
+    <%= submit_tag("TWEET") %>
+  <% end %>
+</div>
+
+<div class="searchTweet">
+  <%= form_tag('/twitter/search', :method => "get") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search by Tweets" %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>

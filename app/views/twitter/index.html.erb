@@ -2,16 +2,7 @@
 <div class="twitterBG"></div>
 <div class="twitter">
 
-<%= form_tag("/twitter", method: "post") do %>
-  <%= label_tag(:message, "Post a Tweet:") %>
-  <%= text_field_tag(:message) %>
-  <%= submit_tag("TWEET") %>
-<% end %>
-
-<%= form_tag('/twitter/search', :method => "get") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search by Tweets" %>
-  <%= submit_tag("Search") %>
-<% end %>
+<%= render 'form' %>
 
 <% @timeline.each do |tweet| %>
   <div><hr>
