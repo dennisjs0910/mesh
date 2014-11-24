@@ -1,5 +1,3 @@
-require 'pry'
-
 class AuthenticationsController < ApplicationController
 
   before_action :require_user, only: [:index]
