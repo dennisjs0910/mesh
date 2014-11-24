@@ -1,7 +1,7 @@
 <div>
 <%= render 'form' %>
 <h1>Search Results:</h1>
-  <%= @media_item.each do |pictures| %>
+  <% @media_item.each do |pictures| %>
   <%= image_tag pictures["images"]["thumbnail"]["url"] %>
   <%= pictures["user"]["username"]%>
   <% end %> 

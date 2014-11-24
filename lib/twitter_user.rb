@@ -10,8 +10,8 @@ class TwitterUser
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = 'F24Pacf6CN7o1gH9E4turYnDz'
       config.consumer_secret     = 'LoFVLjRIpKMdmq0hmoeslLSEgV8qCqdrZi6SvZdJH6lnUvIV9c'
-      config.access_token        = user.authentications.find_by(provider: 'twitter').token
-      config.access_token_secret = user.authentications.find_by(provider: 'twitter').secret
+      config.access_token        = user.twitter_authentication.token
+      config.access_token_secret = user.twitter_authentication.secret
     end
   end
 
