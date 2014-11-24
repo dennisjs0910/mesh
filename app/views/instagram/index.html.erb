@@ -3,11 +3,27 @@
 <%= render 'form' %>
 
 <% @instas.each do |pictures| %>
-  <img src = <%= pictures.images.thumbnail.url %>> 
+  <%= image_tag pictures["images"]["thumbnail"]["url"] %>
+  <p><%= pictures.likes[:count] %></p>
+
+  <% if pictures.user_has_liked == false %>
+      <p><%= link_to "Like", '/instagram/like/' + pictures["id"], :method => :post%> </p>
+    <% else %>
+      <p><%= link_to "Unlike", '/instagram/unlike/' + pictures["id"], :method => :post%> </p>
+    <% end %>
+
 <% end %>
 
 <div>
 <h1>Home Timeline</h1><% @insta_newsfeed.each do |pictures| %>
-    <img src = <%= pictures.images.thumbnail.url %>> 
+    <%= image_tag pictures["images"]["thumbnail"]["url"] %>
+    <p><%= pictures.likes[:count] %></p>
+
+    <% if pictures.user_has_liked == false %>
+      <p><%= link_to "Like", '/instagram/like/' + pictures["id"], :method => :post%> </p>
+    <% else %>
+      <p><%= link_to "Unlike", '/instagram/unlike/' + pictures["id"], :method => :post%> </p>
+    <% end %>
+
   <% end %>
 </div>

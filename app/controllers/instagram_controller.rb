@@ -12,12 +12,13 @@ class InstagramController < ApplicationController
   end 
 
   def like 
-    binding.pry
     client.like_media(params[:id])
+    redirect_to instagram_index_path
   end 
 
   def unlike
     client.unlike_media(params[:id])
+    redirect_to instagram_index_path
   end 
 
   def search_by_user
