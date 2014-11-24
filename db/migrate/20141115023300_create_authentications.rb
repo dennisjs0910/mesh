@@ -6,6 +6,7 @@ class CreateAuthentications < ActiveRecord::Migration
       t.string :uid
       t.string :token
       t.string :secret
+      t.boolean :active, default: false
       t.timestamps
     end
   end
