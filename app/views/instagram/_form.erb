@@ -9,3 +9,14 @@
   <%= text_field_tag(:search_user, params[:search_user]) %>
   <%= submit_tag("Search") %>
 <%end%>
+  <%= form_tag("/instagram/like", method: "post") do %>
+  <%= label_tag(:like, "LIKE") %>
+  <%= text_field_tag(:like, params[:like]) %>
+  <%= submit_tag("like") %>
+<%end%>
+
+  <%= form_tag("/instagram/unlike", method: "post") do %>
+  <%= label_tag(:search, "Search by user:") %>
+  <%= text_field_tag(:search_user, params[:search_user]) %>
+  <%= submit_tag("Search") %>
+<%end%>

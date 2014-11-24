@@ -11,6 +11,19 @@ class InstagramController < ApplicationController
     @media_item = client.tag_recent_media(search[0].name)
   end 
 
+  def like 
+    client = Instagram.client(:access_token => current_user.instagram_authentication.token)
+    binding.pry
+    client.like_media(params[:id])
+    redirect "/instagram"
+  end 
+
+  def unlike
+    client = Instagram.client(:access_token => current_user.instagram_authentication.token)
+    client.unlike_media(params[:id])
+    redirect "/instagram"
+  end 
+
   def search_by_user
     client = Instagram.client(:access_token => current_user.instagram_authentication.token)
     @user_item = client.user_search(params[:search_user])
