@@ -9,3 +9,7 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( hover.css )
 
 Rails.application.config.assets.precompile += %w( linkify.js )
+
+Rails.application.config.assets.precompile += %w( twitter.js )
+
+Rails.application.config.assets.precompile += %w( instagram.js )

@@ -1,13 +1,14 @@
-<h1>Instagram</h1>
+<!-- <h1>Instagram</h1> -->
+<div class="instagramBG">
+  <%= render 'form' %>
 
-<%= render 'form' %>
-
-<% @instas.each do |pictures| %>
-  <img src = <%= pictures.images.thumbnail.url %>> 
-<% end %>
-
-<div>
-<h1>Home Timeline</h1><% @insta_newsfeed.each do |pictures| %>
-    <img src = <%= pictures.images.thumbnail.url %>> 
+  <% @instas.each do |pictures| %>
+    <img src = <%= pictures.images.thumbnail.url %> class="instagramIMG"> 
   <% end %>
+
+  <div>
+  <h1>Home Timeline</h1><% @insta_newsfeed.each do |pictures| %>
+      <img src = <%= pictures.images.thumbnail.url %>> 
+    <% end %>
+  </div>
 </div>
