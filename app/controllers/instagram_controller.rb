@@ -3,18 +3,12 @@ class InstagramController < ApplicationController
     client = Instagram.client(:access_token => current_user.instagram_authentication.token)
     @instas = client.media_popular
     @insta_newsfeed = client.user_media_feed
-    
-    # @insta_like = client.like_media
-    # @insta_unlike = client.unlike_media
   end
 
   def search
     client = Instagram.client(:access_token => current_user.instagram_authentication.token)
     search = client.tag_search(params[:search])
     @media_item = client.tag_recent_media(search[0].name)
-    
-    # @media_item.images[0].thumbnail.url
-    # @media_item = client.tag_recent_media(search[0].name)[0].user.username
   end 
 
   def search_by_user
