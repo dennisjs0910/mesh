@@ -1,0 +1,11 @@
+<div>
+<%= render 'form' %>
+<h1>Search Results:</h1>
+<% @user_item.each do |user| %> 
+<div class = "tom_finish_this_now">
+<%= image_tag user["profile_picture"] %>
+<%= user["username"] %>
+</div>
+<%end%>
+</div> 
+
