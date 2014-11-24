@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
 
   post "instagram/search" => "instagram#search", :as => "instagram/search"
+  post "instagram/search_by_user" => "instagram#search_by_user", :as => "instagram/search_by_user"
   resources :instagram, only: [:index]
 
 
