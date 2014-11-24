@@ -1,3 +1,5 @@
+<%= link_to "Timeline", "/twitter" %>
+<%= link_to "Main", "/twitter/home" %>
 <div class="postTweet">
   <%= form_tag("/twitter", method: "post") do %>
     <%= text_field_tag :message, params[:message], placeholder: "Post a Tweet!" %>

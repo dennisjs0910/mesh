@@ -1,9 +1,10 @@
-<div class="one">
-<h1 class="one">Search Results:</h1>
-<%= @media_item.each do |pictures| %>
-<%= image_tag pictures["images"]["thumbnail"]["url"] %>
-<h3 class="shit"> <%= pictures["user"]["username"]%> </h3>
-<% end %> 
+<div>
+<%= render 'form' %>
+<h1>Search Results:</h1>
+  <%= @media_item.each do |pictures| %>
+  <%= image_tag pictures["images"]["thumbnail"]["url"] %>
+  <%= pictures["user"]["username"]%>
+  <% end %> 
 </div>
 
 

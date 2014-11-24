@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'instagram/index'
-
-  # get 'twitter/index'
-
-  get 'instagram/index'
-
   get 'facebook/index'
 
   get 'home/new'
@@ -16,18 +10,21 @@ Rails.application.routes.draw do
 
   
   get "retweet" => "twitter#re_tweet", :as => "retweet"
-  
-
   get "twitter/search" => "twitter#search", :as => "twitter/search"
-  post "instagram/search" => "instagram#search", :as => "instagram/search"
+  get "twitter/home" => "twitter#home", :as => "twitter/home"
+  resources :twitter, only: [:index, :create]
 
+
+
+  post "instagram/search" => "instagram#search", :as => "instagram/search"
+  resources :instagram, only: [:index]
 
 
   resources :users
   resources :sessions
 
-  resources :twitter, only: [:index, :create]
-  resources :instagram, only: [:index]
+  
+  
   resources :soundcloud, only: [:index]
   resources :facebook, only: [:index ]
 

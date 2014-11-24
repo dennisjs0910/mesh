@@ -18,23 +18,31 @@
   </div>
   <div class="pure-u-1" id="header">
       <div class="pure-u-1-6" id="logo">
-        <a id="mesh" href="#">MESH</a> <!--CHANGE HREF FOR A RUBY ROUTE LATER-->
+        <% if current_user %>
+          <%= link_to "Mesh", "/authentications" %>
+        <% else %>
+          <%= link_to "Mesh", "/login" %>
+        <% end %>
       </div>
       <div class="pure-u-5-6" id="userarea">
         <%=image_tag("user.svg", :id=>"usericon")%>
       </div>
     </div>
+
     <div class="pure-u-1-6" id="sidebar">
-      <div class="pure-u-1-6" id="facebookTab"><p>Facebook</p></div>
+      <div class="pure-u-1-6" id="facebookTab">
+        <p><%= link_to "Facebook", '/facebook' %></p>
+      </div>
+
       <div class="pure-u-1-6" id="twitterTab">
-        <p><%= link_to "Twitter", twitter_path %></p>
+        <p><%= link_to "Twitter", '/twitter' %></p>
+      </div>
+
+      <div class="pure-u-1-6" id="instagramTab">
+        <p><%= link_to "Instagram", '/instagram' %></p>
       </div>
 
       <div class="pure-u-1-6" id="linkedinTab"><p>LinkedIn</p></div>
-      <div class="pure-u-1-6" id="instagramTab">
-        <p><%= link_to "Instagram", instagram_path %></p>
-      </div>
-
       <div class="pure-u-1-6" id="pinterestTab"><p>Pinterest</p></div>
       <div class="pure-u-1-6" id="deviantartTab"><p>deviantART</p></div>
       <div class="pure-u-1-6" id="youtubeTab"><p>YouTube</p></div>

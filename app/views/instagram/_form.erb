@@ -1,0 +1,6 @@
+<%= link_to 'Home', '/instagram' %>
+<%= form_tag("/instagram/search", method: "post") do %>
+  <%= label_tag(:search, "Search by tags:") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search") %>
+<%end%>

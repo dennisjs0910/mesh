@@ -63,17 +63,21 @@ a {
 }
 
 #mesh {
-  color:white;
-  text-decoration:none;
-  font-family:MeshFont;
-  font-size:34px;
-  line-height:50px;
-  margin-left:0.5em;
-  opacity:0.8;
-
   :hover {
     opacity:1;
     transition:0.5s;
+  }
+}
+
+#logo {
+  a {
+    color:white;
+    text-decoration:none;
+    font-family:MeshFont;
+    font-size:34px;
+    line-height:50px;
+    margin-left:0.5em;
+    opacity:0.8;
   }
 }
 
@@ -104,6 +108,10 @@ a {
   min-height:1000px;
   margin-top:50px;
   overflow:scroll;
+
+  a {
+  color:white;
+  }
 }
 
 #content {
