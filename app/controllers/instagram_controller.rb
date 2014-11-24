@@ -3,6 +3,9 @@ class InstagramController < ApplicationController
   
   def index
     @instas = client.media_popular
+  end
+
+  def home
     @insta_newsfeed = client.user_media_feed
   end
 
