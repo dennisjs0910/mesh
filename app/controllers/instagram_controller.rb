@@ -21,13 +21,13 @@ class InstagramController < ApplicationController
     client = Instagram.client(:access_token => current_user.instagram_authentication.token)
     binding.pry
     client.like_media(params[:id])
-    redirect "/instagram"
+    redirect_to instagram_index_path
   end 
 
   def unlike
     client = Instagram.client(:access_token => current_user.instagram_authentication.token)
     client.unlike_media(params[:id])
-    redirect "/instagram"
+  
   end 
 
   def search_by_user
