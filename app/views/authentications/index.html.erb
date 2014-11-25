@@ -4,13 +4,13 @@
     <div class="authentications">
       <% for authentication in @authentications %>
         <div class="authentication">
-          <%= image_tag "#{authentication.provider}_32.png", :size => "32x32" %>
-          <div class="provider"><%= authentication.provider.titleize %></div>
+          <%= image_tag "", :id => "#{authentication.provider}Bubble", :class => "bubble" %>
+          <!-- <div class="provider"><%= authentication.provider.titleize %></div> -->
           <!-- <div class="uid"><%= authentication.uid %></div> -->
           <%= link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove" %>
         </div>
       <% end %>
-      <div class="clear"></div>
+      <!-- <div class="clear"></div> -->
     </div>
   <% end %>
   <p><strong>Services to sign in with:</strong></p>
@@ -18,9 +18,10 @@
   <p><strong>Sign in through one of these services:</strong></p>
 <% end %>
 
-<a href="/auth/twitter" class="bubble" id="twitterBubble"></a>
-<a href="/auth/facebook" class="bubble" id="facebookBubble"></a>
-<a href="/auth/google_apps" class="bubble" id="youtubeBubble"></a>
+<a href="/auth/twitter" class="bubble float" id="twitterBubble"></a>
+<a href="/auth/facebook" class="bubble float" id="facebookBubble"></a>
+<a href="/auth/google_apps" class="bubble float" id="youtubeBubble"></a>
+<a href="/auth/instagram" class="bubble float" id="instagramBubble"></a>
 <div class="clear"></div>
 
 

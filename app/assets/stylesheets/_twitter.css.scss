@@ -60,3 +60,42 @@
   font-size:18px;
   position:relative;
 }
+
+.twitterNV {
+  display:block;
+}
+
+#twitterTL {
+  color:white;
+  text-align:center;
+  display:inline-block;
+  position:relative;
+  width:100%;
+  line-height:50%;
+  top:-120px;
+  right:-110px;
+
+  :hover {
+    color:black;
+    transition:1s;
+  }
+}
+
+#twitterHM {
+  color:white;
+  text-align:center;
+  display:inline-block;
+  position:relative;
+  width:100%;
+  top:-80px;
+  left:-100px;
+
+  :hover {
+    color:black;
+    transition:1s;
+  }
+}
+
+.postTweet {
+  text-align:right;
+}
