@@ -16,7 +16,10 @@ class ApplicationController < ActionController::Base
 
   def twitter_user
     @twitter_user ||= TwitterUser.new(current_user)
-     
   end
+
+  def reddit_user
+    @reddit_user ||= RedditUser.new(current_user)
+  end 
 
 end
