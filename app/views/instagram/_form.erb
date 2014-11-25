@@ -2,11 +2,11 @@
 
 <div class="instagramNV">
   <div class="bubble" id="instagramBubble"></div>
-  <%= link_to 'Popular Media', '/instagram', :id => "instagramHM" %>
+  <%= link_to 'Popular', '/instagram', :id => "instagramPM" %>
   <%= link_to 'Home', '/instagram/home', :id => "instagramHM" %>
 
   <%= form_tag("/instagram/search", method: "post") do %>
-    <p id="instagramLB"><%= label_tag(:search, "Tags:") %>
+    <p id="instagramTG"><%= label_tag(:search, "Tags:") %>
     <%= text_field_tag(:search, params[:search]) %>
     <%= submit_tag("Search") %></p>
   <%end%>
