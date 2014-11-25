@@ -1,13 +1,13 @@
 <h1>Sound Cloud</h1>
 
+ 
 <% @sounds.each do |sound| %>
   <h3><%= sound.title %></h3>
 
   <% if sound.iframe_html %>
     <%= raw sound.iframe_html.html %>
   <% end %>
-  
-<% end %>
 
+<% end %>
 
 

@@ -15,6 +15,7 @@ class SoundcloudUser
   end
 
   def hot_tracks
+ 
     @client.get('/tracks', :limit => 5, :order => 'hotness')
   end
 
@@ -22,9 +23,7 @@ class SoundcloudUser
     begin
       @client.get('/oembed', :url => url)  
     rescue Exception => e
-      
     end
-    
   end
-
+  
 end
