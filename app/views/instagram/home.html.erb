@@ -1,7 +1,7 @@
 <div class="instagramBG">
   <%= render 'form' %>
 
-<% @instas.each do |pictures| %>
+<% @insta_newsfeed.each do |pictures| %>
   <%= image_tag pictures["images"]["thumbnail"]["url"], :class => "instagramIMG"%>
   <p><%= pictures.likes[:count] %></p>
 
@@ -12,4 +12,3 @@
     <% end %>
 
 <% end %>
-

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :twitter, only: [:index, :create]
 
 
-
+  get "instagram/home" => "instagram#home", :as => "instagram/home"
   post "instagram/search" => "instagram#search", :as => "instagram/search"
   post "instagram/search_by_user" => "instagram#search_by_user", :as => "instagram/search_by_user"
   post "instagram/like/:id" => "instagram#like", :as => "instagram/like"

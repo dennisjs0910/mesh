@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= link_to 'Home', '/instagram' %>
 <%= form_tag("/instagram/search", method: "post") do %>
   <%= label_tag(:search, "Search by tags:") %>
@@ -9,3 +10,24 @@
   <%= text_field_tag(:search_user, params[:search_user]) %>
   <%= submit_tag("Search") %>
 <%end%>
+=======
+
+<div class="instagramNV">
+  <div class="bubble" id="instagramBubble"></div>
+  <%= link_to 'Popular Media', '/instagram', :id => "instagramHM" %>
+  <%= link_to 'Home', '/instagram/home', :id => "instagramHM" %>
+
+  <%= form_tag("/instagram/search", method: "post") do %>
+    <p id="instagramLB"><%= label_tag(:search, "Tags:") %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag("Search") %></p>
+  <%end%>
+
+    <%= form_tag("/instagram/search_by_user", method: "post") do %>
+    <p id="instagramUR"><%= label_tag(:search, "Users:") %>
+    <%= text_field_tag(:search_user, params[:search_user]) %>
+    <%= submit_tag("Search") %></p>
+  <%end%>
+</div>
+
+>>>>>>> b75a306f9295aaa7081af8e7d37f0b6a6970b331

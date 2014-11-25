@@ -1,3 +1,60 @@
-// Place all the styles related to the instagram controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.instagramBG {
+  background:#465CA9;
+}
+
+.instagramNV {
+  display:block;
+  padding-top:2em;
+  height:150px !important;
+  opacity:1;
+}
+
+#instagramHM {
+  color:white;
+  text-align:center;
+  display:block;
+  position:relative;
+  top:-165px;
+  background:black;
+  width:100px;
+  height:50px;
+  line-height:50px;
+  margin:0 auto;
+}
+
+#instagramHM:hover {
+  color:black;
+  background:white;
+  transition:0.3s;
+}
+
+#instagramLB {
+  color:white;
+  margin:0;
+  position:relative;
+  text-align:left;
+  top:-120px;
+  left:15px;
+  display:inline-block;
+  margin-left:650px;
+}
+
+#instagramUR {
+  color:white;
+  margin:0;
+  position:relative;
+  text-align:right;
+  top:-165px;
+  right:15px;
+  display:inline-block;
+  margin-right:630px;
+}
+
+.instagramIMG {
+  width:250px;
+}
+
+.instagramSH {
+  color:white;
+  background:black;
+}
