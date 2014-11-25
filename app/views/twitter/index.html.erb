@@ -19,9 +19,9 @@
     <%debug tweet["attrs"] %>
 
 
-    <p>Tweet: <%= tweet["attrs"][:text] %></p><br>
-    <% if tweet["attrs"][:retweeted_status] %>
-      <p>Retweet:,  <%= tweet["attrs"][:retweeted_status][:text] %></p>
+    <p id="tweet"><%= tweet["attrs"][:text] %></p><br>
+    <!-- <% if tweet["attrs"][:retweeted_status] %> -->
+      <!-- <p>Retweet:,  <%= tweet["attrs"][:retweeted_status][:text] %></p> -->
 
     <% end %>
 
