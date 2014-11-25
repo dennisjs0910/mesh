@@ -5,6 +5,16 @@
   position:relative;
   margin:0 auto;
   top:5%;
+
+  input[type="submit"] {
+    width:125px;
+    height:50px;
+    padding:0;
+    position:relative;
+    font-size:18px;
+    background:#2b397e;
+    margin-top:55px;
+  }
 }
 
 .registerText {
@@ -20,4 +30,62 @@
 .registerLink:hover {
   color:#3918bd;
   transition:0.3s;
+}
+
+#signUp {
+  padding-top:15px;
+}
+
+#signUpEmail {
+  label {
+    font-size:20px;
+    position:relative;
+    top:2px;
+    text-align:left;
+    left:-69px;
+  }
+
+  input[type="text"] {
+    width:200px;
+    height:25px;
+    padding:0;
+    position:relative;
+    left:69px;
+    font-size:14px;
+  }
+}
+
+#signUpPW {
+  label {
+    font-size:20px;
+    position:relative;
+    top:2px;
+    left:-51px;
+    text-align:left;
+  }
+
+  input[type="password"] {
+    width:200px;
+    height:25px;
+    padding:0;
+    position:relative;
+    left:51px;
+    font-size:14px;
+  }
+}
+
+#signUpConfirm {
+  label {
+    font-size:20px;
+    position:relative;
+    top:2px;
+    text-align:left;
+  }
+
+  input[type="password"] {
+    width:200px;
+    height:25px;
+    padding:0;
+    font-size:14px;
+  }
 }

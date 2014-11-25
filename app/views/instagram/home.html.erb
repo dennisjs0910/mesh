@@ -2,13 +2,15 @@
   <%= render 'form' %>
 
 <% @insta_newsfeed.each do |pictures| %>
-  <%= image_tag pictures["images"]["thumbnail"]["url"], :class => "instagramIMG"%>
-  <p><%= pictures.likes[:count] %></p>
+<div class="instagramPOST">
+  <%= image_tag pictures["images"]["thumbnail"]["url"], :class => "instagramIMG", :id => "instagramHomeIMG" %>
+  <p id="instagramUser">User: <%= pictures["user"]["username"]%></p>
+  <p id="instagramLKNum"><%= pictures.likes[:count] %> Likes</p>
 
   <% if pictures.user_has_liked == false %>
-      <p><%= link_to "Like", '/instagram/like/' + pictures["id"], :method => :post%> </p>
+      <p id="instagramLike"><%= link_to "Like", '/instagram/like/' + pictures["id"], :method => :post%> </p>
     <% else %>
-      <p><%= link_to "Unlike", '/instagram/unlike/' + pictures["id"], :method => :post%> </p>
+      <p id="instagramUnlike"><%= link_to "Unlike", '/instagram/unlike/' + pictures["id"], :method => :post%> </p>
     <% end %>
-
+</div>
 <% end %>

@@ -1,5 +1,6 @@
+<h1>Welcome to Mesh!</h1>
 <div class="loginform">
-<h1>Sign Up</h1>
+<h3 id="signUp">Sign Up</h3>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -12,15 +13,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
+  <div class="field" id="signUpEmail">
     <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="field" id="signUpPW">
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <div class="field">
+  <div class="field" id="signUpConfirm">
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>

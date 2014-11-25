@@ -23,7 +23,7 @@
 /********** General Styles ***********/
 a {
   text-decoration:none;
-  color:purple;
+  color:white;
 }
 
 /********** Background Styles *********/
@@ -135,12 +135,6 @@ input[type="submit"] {
   color:white;
   background:black;
   font-family:MeshFont;
-}
-
-input[type="submit"]:hover {
-  color:black;
-  background:white;
-  transition:0.3s;
 }
 
 /******** Sidebar Tab Styles **********/
