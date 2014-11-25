@@ -5,7 +5,7 @@
   </div>
   <div class="postTweet">
     <%= form_tag("/twitter", method: "post", :id => "twitterTW") do %>
-      <%= text_area_tag :message, params[:message], placeholder: "Tweet Something (140 chars. max)", :rows => "6" %>
+      <%= text_area_tag :message, params[:message], placeholder: "Tweet Something (140 chars. max)", :rows => "6", :maxlength => "140" %>
       <%= submit_tag("Tweet") %>
     <% end %>
   </div>

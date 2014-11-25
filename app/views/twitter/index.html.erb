@@ -4,8 +4,8 @@
 <%= render 'form' %>
 
 <% @timeline.each do |tweet| %>
-  <div><hr>
-    <div><%= raw tweet["attrs"][:source] %></div>
+  <div class="tweets">
+    <!-- <div><%= raw tweet["attrs"][:source] %></div> -->
     
     <small>@<%= tweet["attrs"][:user][:screen_name] %></small><br>
    

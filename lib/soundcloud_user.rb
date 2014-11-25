@@ -14,4 +14,8 @@ class SoundcloudUser
       })
   end
 
+  def hot_tracks
+    @client.get('/tracks', :limit => 25, :order => 'hotness')
+  end
+  
 end

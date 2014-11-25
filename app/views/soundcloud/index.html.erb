@@ -1,14 +1,9 @@
 <h1>Sound Cloud</h1>
 
 <% @sounds.each do |songs| %>
- <% songs.permalink_url %> 
-
-
-<%= @sounds.get('/tracks', :limit => 10, :order => 'hotness').each do |track| %>
-
-  <%= track.permalink_url %>
+  <h3><%= songs.title %></h3>
+  <p><%= songs.permalink_url %></p>
   
 <% end %>
-
 
 
