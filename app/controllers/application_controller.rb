@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
     @soundcloud_user ||= SoundcloudUser.new(current_user)
   end
 
+  def reddit_user
+    @reddit_user ||= RedditUser.new(current_user)
+  end 
+
 end

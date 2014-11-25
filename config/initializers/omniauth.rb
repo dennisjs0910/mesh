@@ -4,5 +4,4 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, '383367571788257', '61a0a4c317af1acca95e5add55472334'
   provider :soundcloud, '31b35595e00750bf40213344343e81f1', '39613d98981c264e14dcbd8dead5896f'
   provider :reddit, 'vOsw4t8ygEHS2Q', 'HjbN35t4g7oOPW0wCp5hBRadTmc', :scope => 'identity, read'
-
 end

@@ -10,6 +10,7 @@
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" %> 
   <%= javascript_include_tag "linkify" %>
   <%= csrf_meta_tags %>
+  <script src="http://connect.soundcloud.com/sdk.js"></script>
 </head>
 
 <body class="<%= params[:controller] %>">
@@ -42,6 +43,18 @@
         <p><%= link_to "Instagram", '/instagram' %></p>
       </div>
 
+ 
+      <div class="pure-u-1-6" id="soundcloudTab">
+        <p><%= link_to "Soundcloud", '/soundcloud' %></p>
+      </div>
+
+      <div class="pure-u-1-6" id="linkedinTab"><p>LinkedIn</p></div>
+      <div class="pure-u-1-6" id="pinterestTab"><p>Pinterest</p></div>
+      <div class="pure-u-1-6" id="deviantartTab"><p>deviantART</p></div>
+      <div class="pure-u-1-6" id="youtubeTab"><p>YouTube</p></div>
+      <div class="pure-u-1-6" id="tumblrTab"><p>Tumblr</p></div>
+      <div class="pure-u-1-6" id="redditTab"><p>Reddit</p></div>
+ 
       <div class="pure-u-1-6" id="linkedinTab">
         <p><%= link_to "LinkedIn", '/linkedin' %></p>
       </div>
