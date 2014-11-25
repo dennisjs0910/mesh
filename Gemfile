@@ -34,7 +34,7 @@ gem 'pry',           group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'oauth2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'sorcery'

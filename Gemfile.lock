@@ -216,6 +216,7 @@ DEPENDENCIES
   jquery-rails
   json
   koala
+  oauth2
   omniauth
   omniauth-facebook
   omniauth-instagram
