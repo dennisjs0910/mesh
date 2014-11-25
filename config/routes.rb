@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post "instagram/unlike/:id" => "instagram#unlike", :as => "instagram/unlike"  
   resources :instagram, only: [:index]
 
+  resources :reddit, only: [:index]
+
 
   resources :users
   resources :sessions
