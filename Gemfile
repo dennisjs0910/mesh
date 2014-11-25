@@ -55,5 +55,9 @@ gem 'koala'
 gem 'omniauth-soundcloud'
 gem 'soundcloud'
 
+#reddit 
+gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
+gem 'redditkit'
+
 
 gem 'json'
