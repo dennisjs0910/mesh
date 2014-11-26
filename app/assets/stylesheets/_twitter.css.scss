@@ -1,34 +1,18 @@
-.tweets {
-  width:100%;
-  min-height:50px;
-  margin-bottom:0.5em;
+#tweet {
+  color:white;
+  font-size:20px;
   background:#58a2e5;
-  position:relative;
-}
+  min-height:200px;
 
-.tweets img {
-    border:0;
-    display:block;
-    border-radius:20%;
-    width:60px;
-    position:relative;
-    top:-40px;
-    left:20px;
-  }
-
-.tweets small {
+  small {
     text-align:left;
     display:block;
     position:relative;
     color:white;
-    font-size:18px;
-    left:90px;
-    top:60px;
+    font-size:13px;
+    left:70px;
+    top:65px;
   }
-
-#tweet {
-  color:white;
-  font-size:20px;
 }
 
 .twitterBG {
@@ -38,6 +22,18 @@
   z-index:-1;
   opacity:1;
   position:absolute;
+}
+
+#tweetTXT {
+  font-size:17px;
+  position:relative;
+  text-align:center;
+  padding:30px !important;
+  margin-top:80px;
+
+  a {
+    color:darkblue;
+  }
 }
 
 #twitterUN {
@@ -72,14 +68,10 @@
 }
 
 #twitterIMG {
-  max-width:400px;
-  max-height:400px;
-  position:relative;
-}
-
-#twitterTXT {
-  font-size:18px;
-  position:relative;
+  max-width:400px !important;
+  max-height:400px !important;
+  position:relative !important;
+  top:50px;
 }
 
 .twitterNV {
@@ -176,4 +168,14 @@
     font-size:14px;
     background:#58a2e5;
   }
+}
+
+.retweet {
+  background:#3192ec;
+  position:relative;
+  top:-20px;
+  width:75px;
+  height:30px;
+  line-height:30px;
+  left:562px;
 }
