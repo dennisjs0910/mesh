@@ -24,12 +24,23 @@ class RedditUser
   end 
 
   def reddit_upvote(link)
-  
-    @client.upvote(link)
+    if @client
+      begin
+        @client.upvote(link)
+      rescue Exception => e
+        
+      end
+    end
   end 
 
   def reddit_downvote(link)
-    @client.downvote(link)
+    if @client
+      begin
+        @client.downvote(link)
+      rescue Exception => e
+        
+      end
+    end
   end 
 
   def display_comments(rlink)
