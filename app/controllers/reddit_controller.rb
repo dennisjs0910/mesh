@@ -17,6 +17,7 @@ class RedditController < ApplicationController
     # @upvotes = @newclient.upvote(params[:upvoted])
     # @reddit_user = RedditUser.new(current_user)
     @upvotes = reddit_user.reddit_upvote(params[:upvote])
+    binding.pry
   end 
 
   def downvote

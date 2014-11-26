@@ -28,3 +28,36 @@ input[name="commit"] {
     transition:0.3s;
   }
 }
+
+.actions {
+  input[type="submit"] {
+    background:#2b397e;
+  }
+}
+
+.field {
+  p {
+    text-align:left;
+    width:50%;
+    margin:10px 20px 25px 400px;
+  }
+
+  label {
+    position:relative;
+    left:-30px;
+  }
+}
+
+.field:nth-child(4) p label {
+  left:90px !important;
+}
+
+#remember_me {
+  position:relative;
+  left:85px;
+  top:-7px;
+}
+
+#email {
+  margin-left:68px;
+}

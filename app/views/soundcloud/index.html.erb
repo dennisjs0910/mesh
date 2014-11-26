@@ -1,10 +1,8 @@
-<h1>Sound Cloud</h1>
+<div class="soundcloudBG"></div>
 <%= render 'form' %>
- 
-<% @sounds.each do |sound| %>
-  <h3><%= sound.title %></h3>
-
+ <% @sounds.each do |sound| %>
   <% if sound.iframe_html %>
+    <div class="bubble" id="soundcloudBubble"></div>
     <%= raw sound.iframe_html.html %>
   <% end %>
 
