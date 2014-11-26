@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
     @reddit_user ||= RedditUser.new(current_user)
   end 
 
+  def reddit_comment 
+    @reddit_comment ||= RedditComment.new(current_user)
+  end 
+
 end

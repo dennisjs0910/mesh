@@ -50,4 +50,8 @@ class User < ActiveRecord::Base
     self.authentications.find_by(provider: :facebook)
   end 
 
+  def reddit_authentication 
+    self.authentications.find_by(provider: :reddit)
+  end 
+
 end
