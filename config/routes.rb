@@ -22,7 +22,15 @@ Rails.application.routes.draw do
   post "instagram/unlike/:id" => "instagram#unlike", :as => "instagram/unlike"  
   resources :instagram, only: [:index]
 
+  post "reddit/search" => "reddit#search", :as => "reddit/search"  
+  post "reddit/like" => "reddit#upvote", :as => "reddit/upvote"
+  post "reddit/comments" => "reddit#comments", :as => "reddit/comments"
   resources :reddit, only: [:index]
+  #   member do
+  #     post :like
+  #     get :comments
+  #   end
+  # end
 
 
   resources :users

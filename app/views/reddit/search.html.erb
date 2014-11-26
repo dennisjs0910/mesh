@@ -1,0 +1,12 @@
+<h1> Search Results </h1>
+
+<h3> Links </h3>
+  <%= render 'form' %>
+  <% @search.each do |link| %>
+  <p> <%= link.attributes[:title]%> </p>
+  <p> Votes: <%= link.attributes[:score] %>
+  <p> Author: <%= link.attributes[:author]%> </p>
+  <%= binding.pry %>
+  <p> Comments:<%= link.attributes[:url]%> </p> 
+  <br>
+  <% end %>
