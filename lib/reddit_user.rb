@@ -16,10 +16,25 @@ class RedditUser
   end
 
   def front_page 
-    
-    # @client.front_page.results[0].attributes[:url]
     @client.front_page
-    # (options = {:category('hot')})
+  end 
+
+  def reddit_search(reddit_search) 
+    @client.search(reddit_search)
+  end 
+
+  def reddit_upvote(link)
+  
+    @client.upvote(link)
+  end 
+
+  def reddit_downvote(link)
+    @client.downvote(link)
+  end 
+
+  def display_comments(rlink)
+    article_link = @client.link(rlink)
+    @client.comments(article_link)
   end 
 
 end

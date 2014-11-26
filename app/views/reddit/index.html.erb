@@ -1,6 +1,26 @@
 <h1> Reddit </h1>
-
-  <% @frontpage.each do |link| %>
-   
-    <%= link.attributes[:url] %>
+<%= render 'form' %>
+<div> 
+<h3> Frontpage </h3>
+<% @frontpage.each do |link| %>
+<p> <%= link.attributes[:url]%> </p>
+  <% if link.attributes[:thumbnail].empty? %>
+  <% else %> 
+  <p class = title>Title: <%= link.attributes[:title] %> </p>
+  <p><%= image_tag link.attributes[:thumbnail] %></p>
   <% end %>
+<p>Votes: <%= link.attributes[:score] %> </p>
+
+<p><%= link_to "Upvote", reddit_upvote_path(:upvoted => link), :method => :post%> </p>
+
+<p><%= link_to "Downvote", reddit_upvote_path(:downvoted => link), :method => :post%> </p>
+
+<p> <%= link_to "Comments", reddit_comments_path(@reddit_comments, :comments => link.attributes[:name]), :method => :post %> </p>
+
+<% end %>
+
+</div>
+
+<!-- :comments) => link.attributes[:permalink] -->
+ <!-- link_to "Comments", reddit_comments_path(@reddit_comments, :comments => link.attributes[:permalink]), :method => :post -->
+<!--  .attributes[:name] -->
