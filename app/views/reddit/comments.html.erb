@@ -1,6 +1,4 @@
 <h1> Comments </h1>
 <% @reddit_comments.each do |comment| %>
-  <% if comment[:body_html] %>
-   <%=raw comment[:body_html] %>
-  <% end %>
+ <p><%= comment.try(:body) %></p>
 <% end %>
