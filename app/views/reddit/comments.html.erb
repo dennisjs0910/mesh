@@ -1,4 +1,5 @@
 <h1> Comments </h1>
-<% @reddit_comments.each do |link| %>
-  <p> <%=link %> </p>
-  <% end %>
+<% @reddit_comments.each do |comment| %>
+ <p><%= comment.try(:body) %></p>
+<% end %>
+
