@@ -1,0 +1,13 @@
+<h1>Sound Cloud</h1>
+<%= render 'form' %>
+ 
+<% @results.each do |result| %>
+  <h3><%= result.title %></h3>
+
+  <% if result.iframe_html %>
+    <%= raw result.iframe_html.html %>
+  <% end %>
+
+<% end %>
+
+

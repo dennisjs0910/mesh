@@ -25,5 +25,9 @@ class SoundcloudUser
     rescue Exception => e
     end
   end
+
+  def search(param)
+    @client.get('/tracks', :q => param, :licence => 'cc-by-sa', :limit => 5)
+  end
   
 end

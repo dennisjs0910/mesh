@@ -8,4 +8,11 @@ class SoundcloudController < ApplicationController
  
   end
 
+  def search
+    @results = soundcloud_user.search(params[:search])
+    @results.each do |result|
+      result[:iframe_html] = soundcloud_user.embed_music(result.permalink_url)
+    end
+  end
+
 end

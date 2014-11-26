@@ -29,8 +29,9 @@ Rails.application.routes.draw do
   resources :sessions
 
   
-  
+  post "soundcloud/search" => "soundcloud#search", :as => "soundcloud/search"
   resources :soundcloud, only: [:index]
+  
   resources :facebook, only: [:index ]
 
 
