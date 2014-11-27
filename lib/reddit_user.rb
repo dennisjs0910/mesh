@@ -23,24 +23,21 @@ class RedditUser
     @client.search(reddit_search)
   end 
 
-  def reddit_upvote(link)
-    if @client
-      begin
-        @client.upvote(link)
-      rescue Exception => e
-        
-      end
-    end
+  def vote(object, direction)
+    parameters = { :id => object, :dir => direction, :api_type => 'json' }
+  end
+
+  def reddit_link(object)
+    @client.link(object)
+  end
+
+  def reddit_upvote(object)
+    @client.vote(object, 1)
   end 
 
   def reddit_downvote(link)
-    if @client
-      begin
-        @client.downvote(link)
-      rescue Exception => e
-        
-      end
-    end
+
+    @client.downvote(link)
   end 
 
   def display_comments(rlink)

@@ -2,25 +2,18 @@ class RedditController < ApplicationController
 
   def index
     @frontpage = reddit_user.front_page
-    # @title
   end 
 
   def search 
-    # binding.pry 
     @search = reddit_user.reddit_search(params[:search])
   end 
 
   def upvote
-    # @client = RedditUser.new(current_user)
-    # @newclient = @client.create_reddit_client
-    # binding.pry
-    # @upvotes = @newclient.upvote(params[:upvoted])
-    # @reddit_user = RedditUser.new(current_user)
-    @upvotes = reddit_user.reddit_upvote(params[:upvote])
+    @downvotes = reddit_user.reddit_upvote(params[:downvoted])
   end 
 
   def downvote
-    @downvotes = reddit_user.reddit_upvote(params[:downvote])
+    @downvotes = reddit_user.reddit_downvote(params[:downvoted])
   end 
 
   def comments

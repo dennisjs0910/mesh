@@ -26,11 +26,7 @@ Rails.application.routes.draw do
   post "reddit/like" => "reddit#upvote", :as => "reddit/upvote"
   post "reddit/comments" => "reddit#comments", :as => "reddit/comments"
   resources :reddit, only: [:index]
-  #   member do
-  #     post :like
-  #     get :comments
-  #   end
-  # end
+
 
 
   resources :users
@@ -46,7 +42,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'authentications#create'
   resources :authentications, only: [:index, :destroy]
   
-  root :to => "users#new"
+  root :to => "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
