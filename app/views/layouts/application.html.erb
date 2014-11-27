@@ -26,9 +26,8 @@
         <% end %>
       </div>
       <div class="pure-u-5-6" id="userarea">
-        <%=image_tag("user.svg", :id=>"usericon")%>
         <% if current_user %>
-          <%= link_to "Log out", '/logout' %>
+          <%= link_to "Log out", '/logout', :id => "logout" %>
         <% end %>
       </div>
     </div>

@@ -1,0 +1,69 @@
+.facebookBG {
+  background:#507BBE;
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:-1;
+}
+
+.facebookPosts {
+  color:white;
+  font-size:20px;
+  background:#58a2e5;
+  min-height:200px;
+  position:relative;
+
+  a {
+    color:darkblue;
+  }
+}
+
+.facebookPF {
+  width:75px;
+  height:75px;
+  border-radius:30%;
+  position:absolute;
+  overflow:hidden;
+  margin:15px;
+
+  img {
+    width:75px;
+    height:75px;
+  }
+}
+
+.username {
+  font-family:Meshfont;
+  text-align:left;
+  padding:40px 0 0 110px;
+}
+
+.darthpic1 {
+  display:inline-block;
+  width:400px;
+  height:250px;
+  overflow:hidden;
+
+  img {
+    width:400px;
+    height:250px;
+  }
+}
+
+.darthpic2 {
+  display:inline-block;
+  width:400px;
+  height:250px;
+  overflow:hidden;
+
+  img {
+    width:400px;
+    height:250px;
+  }
+}
+
+
+
+.facebookTXT {
+  padding-bottom:50px;
+}

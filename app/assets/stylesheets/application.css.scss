@@ -4,6 +4,7 @@
 @import "instagram";
 @import "soundcloud";
 @import "reddit";
+@import "facebook";
 @import "authentications";
 @import "sessions";
 @import "users";
@@ -26,6 +27,13 @@
 a {
   text-decoration:none;
   color:white;
+}
+
+#logout {
+  position: relative;
+  bottom: -15px;
+  right: 20px;
+  font-family: MeshFont;
 }
 
 /********** Background Styles *********/
