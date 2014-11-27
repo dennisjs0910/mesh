@@ -1,0 +1,161 @@
+.instagramBG {
+  background:#465CA9;
+}
+
+.instagramNV {
+  display:block;
+  height:150px !important;
+  opacity:1;
+}
+
+#instagramHM {
+  color:white;
+  background:#2b397e;
+  text-align:center;
+  display:block;
+  position:relative;
+  top:-135px;
+  left:-115px;
+  width:110px;
+  height:50px;
+  line-height:50px;
+  margin:0 auto;
+}
+
+#instagramPM {
+  color:white;
+  background:#2b397e;
+  text-align:center;
+  display:block;
+  position:relative;
+  top:-85px;
+  right:-120px;
+  width:110px;
+  height:50px;
+  line-height:50px;
+  margin:0 auto;
+}
+
+#instagramTG {
+  color:white;
+  margin:0 auto;
+  position:relative;
+  text-align:right;
+  left:425px;
+  display:inline-block;
+  padding-right:10px;
+  top:-205px;
+
+  label {
+    font-size:20px;
+    position:relative;
+    top:2px;
+  }
+
+  input[type="text"] {
+    width:200px;
+    height:25px;
+    padding:0;
+    font-size:14px;
+  }
+
+  input[type="submit"] {
+    width:75px;
+    height:25px;
+    padding:0;
+    position:relative;
+    font-size:14px;
+    background:#2b397e;
+  }
+}
+
+#instagramUR {
+  color:white;
+  margin:0 auto;
+  position:relative;
+  text-align:right;
+  left:421px;
+  display:inline-block;
+  padding-right:10px;
+  top:-210px;
+
+  label {
+    font-size:20px;
+    position:relative;
+    top:2px;
+  }
+
+  input[type="text"] {
+    width:200px;
+    height:25px;
+    padding:0;
+    font-size:14px;
+  }
+
+  input[type="submit"] {
+    width:75px;
+    height:25px;
+    padding:0;
+    position:relative;
+    font-size:14px;
+    background:#2b397e;
+  }
+}
+
+.instagramIMG {
+  width:250px;
+}
+
+#instagramHomeIMG {
+  margin-top:25px;
+}
+
+.instagramSH {
+  color:white;
+  background:black;
+}
+
+.instagramPOST {
+  background:#2b397e;
+}
+
+#instagramLKNum {
+  margin:0;
+  position:relative;
+  top:15px;
+  color:white;
+}
+
+#instagramLike {
+  background:#4255b4;
+  position:relative;
+  left:550px;
+  top:-15px;
+  width:100px;
+  height:40px;
+  line-height:40px;
+  color:white;
+}
+
+#instagramUnlike {
+  background:#4255b4;
+  position:relative;
+  left:550px;
+  top:-15px;
+  width:100px;
+  height:40px;
+  line-height:40px;
+  color:white;
+}
+
+#instagramUser {
+  color:white;
+  position:relative;
+  top:-30px;
+}
+
+.instagramUserlist {
+  display:inline-block;
+  font-size:20px;
+  color:white;
+}

@@ -1,0 +1,16 @@
+<div class="instagramBG">
+<%= render 'form' %>
+  <% @media_item.each do |pictures| %>
+  <div class="instagramPOST">
+  <%= image_tag pictures["images"]["thumbnail"]["url"], :class => "instagramIMG", :id => "instagramHomeIMG" %>
+  <p id="instagramUser">User: <%= pictures["user"]["username"]%></p>
+  <p id="instagramLKNum"><%= pictures.likes[:count] %></p>
+
+  <% if pictures.user_has_liked == false %>
+      <p id="instagramLike"><%= link_to "Like", '/instagram/like/' + pictures["id"], :method => :post%> </p>
+    <% else %>
+      <p id="instagramUnlike"><%= link_to "Unlike", '/instagram/unlike/' + pictures["id"], :method => :post%> </p>
+    <% end %>
+  </div>
+  <% end %> 
+</div>

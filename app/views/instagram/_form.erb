@@ -1,0 +1,21 @@
+
+
+<div class="instagramNV">
+  <div class="bubble" id="instagramBubble"></div>
+  <%= link_to 'Popular', '/instagram', :id => "instagramPM" %>
+  <%= link_to 'Home', '/instagram/home', :id => "instagramHM" %>
+
+  <%= form_tag("/instagram/search", method: "post") do %>
+    <p id="instagramTG"><%= label_tag(:search, "Tags:") %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag("Search") %></p>
+  <%end%>
+
+    <%= form_tag("/instagram/search_by_user", method: "post") do %>
+    <p id="instagramUR"><%= label_tag(:search, "Users:") %>
+    <%= text_field_tag(:search_user, params[:search_user]) %>
+    <%= submit_tag("Search") %></p>
+  <%end%>
+</div>
+
+

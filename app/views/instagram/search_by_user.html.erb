@@ -1,0 +1,12 @@
+<div class="instagramBG">
+<%= render 'form' %>
+<h1>Search Results:</h1>
+<% @user_item.each do |user| %> 
+<div class = "instagramUserlist">
+<%= image_tag user["profile_picture"] %>
+<br>
+<%= user["username"] %>
+</div>
+<%end%>
+</div> 
+

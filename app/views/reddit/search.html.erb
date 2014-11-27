@@ -1,0 +1,14 @@
+<div id="redditBG"></div>
+<div class="bubble" id="redditBubble"></div>
+  <%= render 'form' %>
+  <% @search.each do |link| %>
+<div class="redditPosts">
+  <p class="title"> <%= link.attributes[:title]%><br><%= link.attributes[:url]%></p>
+  <p class="redditVotes"><%= link.attributes[:score] %>
+  <p class="redditUpVotes"><%= link_to "Upvote", reddit_upvote_path(:upvoted => link), :method => :post%> </p>
+
+<p class="redditDownVotes"><%= link_to "Downvote", reddit_upvote_path(:downvoted => link), :method => :post%> </p>
+  <!-- <p class=""> Author: <%= link.attributes[:author]%> </p> -->
+  <p class="redditComments"><%= link_to "Comments", reddit_comments_path(@reddit_comments, :comments => link.attributes[:name]), :method => :post %></p> 
+</div>
+  <% end %>

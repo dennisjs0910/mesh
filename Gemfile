@@ -13,7 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -25,9 +24,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-
-gem 'better_errors',        group: :development
-gem "binding_of_caller",        group: :development
+gem 'pry',           group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -37,13 +34,30 @@ gem "binding_of_caller",        group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'oauth2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-#Use oauth + devise for authentication and security
-gem 'devise'
+gem 'sorcery'
 gem 'omniauth'
+#twitter
 gem 'omniauth-twitter'
-# gem 'omniauth-facebook'
-# gem 'omniauth-linkedin'
+gem 'twitter'
+
+#instagram 
+gem 'omniauth-instagram'
+gem 'instagram'
+
+#facebook
+gem 'omniauth-facebook'
+gem 'koala'
+
+#soundcloud 
+gem 'omniauth-soundcloud'
+gem 'soundcloud'
+
+#reddit 
+gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
+gem 'redditkit'
+
+
+gem 'json'

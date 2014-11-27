@@ -1,0 +1,18 @@
+  <div class="twitterNV">
+    <div class="bubble" id="twitterBubble"></div>
+    <%= link_to "Home", "/twitter/home", :id => "twitterHM"  %>
+    <%= link_to "Timeline", "/twitter" , :id => "twitterTL" %>
+  </div>
+  <div class="postTweet">
+    <%= form_tag("/twitter", method: "post", :id => "twitterTW") do %>
+      <%= text_area_tag :message, params[:message], placeholder: "Tweet Something (140 chars. max)", :rows => "6", :maxlength => "140" %>
+      <%= submit_tag("Tweet") %>
+    <% end %>
+  </div>
+
+  <div class="searchTweet">
+    <%= form_tag('/twitter/search', :method => "get") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search by Tweets" %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>

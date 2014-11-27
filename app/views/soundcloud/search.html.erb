@@ -1,0 +1,13 @@
+<div class="soundcloudBG"></div>
+  <%= render 'form' %>
+   
+  <% @results.each do |result| %>
+    <% if result.iframe_html %>
+      <div class="bubble" id="soundcloudBubble"></div>
+      <%= raw result.iframe_html.html %>
+    <% end %>
+
+  <% end %>
+
+
+

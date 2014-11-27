@@ -1,15 +1,49 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+
+  get 'facebook/index'
+
+  get 'home/new'
+
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+
+  
+  get "retweet" => "twitter#re_tweet", :as => "retweet"
+  get "twitter/search" => "twitter#search", :as => "twitter/search"
+  get "twitter/home" => "twitter#home", :as => "twitter/home"
+  resources :twitter, only: [:index, :create]
 
 
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
-  resource :sessions, only: [:new, :create, :destroy]
+  get "instagram/home" => "instagram#home", :as => "instagram/home"
+  post "instagram/search" => "instagram#search", :as => "instagram/search"
+  post "instagram/search_by_user" => "instagram#search_by_user", :as => "instagram/search_by_user"
+  post "instagram/like/:id" => "instagram#like", :as => "instagram/like"
+  post "instagram/unlike/:id" => "instagram#unlike", :as => "instagram/unlike"  
+  resources :instagram, only: [:index]
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  post "reddit/search" => "reddit#search", :as => "reddit/search"  
+  post "reddit/like" => "reddit#upvote", :as => "reddit/upvote"
+  post "reddit/comments" => "reddit#comments", :as => "reddit/comments"
+  resources :reddit, only: [:index]
 
-  # match '/users/auth/twitter/callback' => "omniauth_callbacks#twitter", via: [:get], :as => :user_omniauth_callback
 
-  root to: 'users#index'
+
+  resources :users
+  resources :sessions
+
+  
+  post "soundcloud/search" => "soundcloud#search", :as => "soundcloud/search"
+  resources :soundcloud, only: [:index]
+  
+  resources :facebook, only: [:index ]
+
+
+  get '/auth/:provider/callback' => 'authentications#create'
+  resources :authentications, only: [:index, :destroy]
+  
+  root :to => "sessions#new"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

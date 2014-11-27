@@ -1,0 +1,32 @@
+<div class="twitterBG"></div>
+<%= render 'form' %>
+
+<% if @tweet %>
+  <% @tweet.each do |search_tweet| %>
+
+
+  <div id="tweet">
+   <!--  <%= search_tweet["user"]["name"] %> -->
+    <small>@<%= search_tweet[:user][:screen_name] %></small>
+  
+  <% if search_tweet["attrs"][:entities] %>
+    <% if search_tweet["attrs"][:entities][:media] %>
+      <%= image_tag search_tweet["attrs"][:entities][:media][0][:media_url].to_s, :id=>"twitterIMG" %>
+    <% end %>
+  <% end %>
+ 
+
+    <%= image_tag search_tweet[:user][:profile_image_url_https], :id => "twitterPF"%>
+    <% debug search_tweet %>
+
+    <p id="tweetTXT"><%= search_tweet[:text] %></p>
+    <p class="retweet"><%= link_to "Retweet", retweet_path(id: search_tweet["id"]), :method => :get%> </p>
+    <% if search_tweet["research_tweeted_status"] %>
+      <!-- <p class="retweet">Retweet: <%= search_tweet["retweeted_status"]["text"] %></p> -->
+
+    <% end %>
+    </div>
+    
+    <% debug search_tweet["attrs"] %>
+  <% end %>
+<% end %>

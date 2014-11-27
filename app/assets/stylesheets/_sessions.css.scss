@@ -1,0 +1,63 @@
+/********* Login Form Styles *************/
+.loginform {
+  width:35%;
+  margin:0 auto;
+  height:400px;
+  border-radius:15px;
+  background:rgba(1,1,1,0.1);
+}
+
+input[type="text"]{
+  font-family:MeshFont;
+  border:none;
+  letter-spacing: 0.03em;
+}
+
+input[type="password"]{
+  font-family:MeshFont;
+  border:none;
+  letter-spacing: 0.03em;
+}
+
+input[name="commit"] {
+  border:none;
+  background:#725ec2;
+
+  :hover {
+    background:#5b3ae2;
+    transition:0.3s;
+  }
+}
+
+.actions {
+  input[type="submit"] {
+    background:#2b397e;
+  }
+}
+
+.field {
+  p {
+    text-align:left;
+    width:50%;
+    margin:10px 20px 25px 400px;
+  }
+
+  label {
+    position:relative;
+    left:-30px;
+  }
+}
+
+.field:nth-child(4) p label {
+  left:90px !important;
+}
+
+#remember_me {
+  position:relative;
+  left:85px;
+  top:-7px;
+}
+
+#email {
+  margin-left:68px;
+}

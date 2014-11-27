@@ -1,0 +1,6 @@
+<%= form_tag("/soundcloud/search", method: "post") do %>
+<p id="soundcloudSearch">
+<%= text_field_tag(:search, params[:search]) %>
+<%= submit_tag("Search") %></p>
+<% end %>
+

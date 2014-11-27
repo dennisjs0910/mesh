@@ -1,0 +1,30 @@
+<div class="twitterBG"></div>
+<div class="twitter">
+
+<%= render 'form' %>
+<% @home.each do |tweet| %>
+  <div id="tweet">
+    <!-- <%= raw tweet["attrs"][:source] %> -->
+    
+    <small>@<%= tweet["attrs"][:user][:screen_name] %></small>
+   
+  
+      <% if tweet["attrs"][:entities][:media] %>
+        <%= image_tag tweet["attrs"][:entities][:media][0][:media_url], :id => "twitterIMG" %>
+      <% end %>
+
+
+    <%= image_tag tweet["attrs"][:user][:profile_image_url_https], :id => "twitterPF" %>
+    <%debug tweet["attrs"] %>
+
+
+    <p id="tweetTXT"><%= tweet["attrs"][:text] %></p>
+    <% if tweet["attrs"][:retweeted_status] %>
+      <!-- <p>Retweet:,  <%= tweet["attrs"][:retweeted_status][:text] %></p>
+ -->
+    <% end %>
+
+  </div>
+<% end %>
+
+</div>

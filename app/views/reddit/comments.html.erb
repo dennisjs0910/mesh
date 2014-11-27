@@ -1,0 +1,9 @@
+<div id="redditBG"></div>
+<div class="bubble" id="redditBubble"></div>
+<% @reddit_comments.each do |comment| %>
+<div class="redditPosts">
+ <p class="redditTitle"><%= comment.try(:body) %></p>
+<p class="redditAtr"><%= comment.try(:author) %></p>
+<p class="redditVotes"><%= comment.try(:score) %></p>
+<% end %>
+</div>
