@@ -1,25 +1,24 @@
-<h1> Reddit </h1>
+<div id="redditBG"></div>
+<div class="bubble" id="redditBubble"></div>
 <%= render 'form' %>
-<div> 
-<h3> Frontpage </h3>
 <% @frontpage.each do |link| %>
-<p> <%= link.attributes[:url]%> </p>
+<div class="redditPosts">
   <% if link.attributes[:thumbnail].empty? %>
+<p class = "title"><%= link.attributes[:title] %><br><%= link.attributes[:url]%> </p>
   <% else %> 
-  <p class = title>Title: <%= link.attributes[:title] %> </p>
-  <p><%= image_tag link.attributes[:thumbnail] %></p>
+<p class = "title"><%= link.attributes[:title] %><br><%= link.attributes[:url]%> </p>
+  <p class="redditIMG"><%= image_tag link.attributes[:thumbnail] %></p>
   <% end %>
-<p>Votes: <%= link.attributes[:score] %> </p>
+<p class="redditVotes"><%= link.attributes[:score] %> </p>
 
-<p><%= link_to "Upvote", reddit_upvote_path(:upvoted => link), :method => :post%> </p>
+<p class="redditUpVotes"><%= link_to "Upvote", reddit_upvote_path(:upvoted => link), :method => :post%> </p>
 
-<p><%= link_to "Downvote", reddit_upvote_path(:downvoted => link), :method => :post%> </p>
+<p class="redditDownVotes"><%= link_to "Downvote", reddit_upvote_path(:downvoted => link), :method => :post%> </p>
 
-<p> <%= link_to "Comments", reddit_comments_path(@reddit_comments, :comments => link.attributes[:name]), :method => :post %> </p>
-
+<p class="redditComments"> <%= link_to "Comments", reddit_comments_path(@reddit_comments, :comments => link.attributes[:name]), :method => :post %> </p>
+</div>
 <% end %>
 
-</div>
 
 <!-- :comments) => link.attributes[:permalink] -->
  <!-- link_to "Comments", reddit_comments_path(@reddit_comments, :comments => link.attributes[:permalink]), :method => :post -->

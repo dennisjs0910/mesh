@@ -5,3 +5,16 @@
   position:absolute;
   z-index:-1;
 }
+
+#soundcloudSearch {
+  label {
+    color:white;
+  }
+
+  input[type="submit"] {
+    height:42px;
+    background:#f4b439;
+    position:relative;
+    top:1px;
+  }
+}
